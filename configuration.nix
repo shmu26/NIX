@@ -130,7 +130,6 @@ pkgs.xfce.mousepad
      pkgs. duplicity
      pkgs.ntfs3g
      pkgs.google-chrome
-     pkgs.todoist-electron
      pkgs.audacious
      pkgs.timeshift
      pkgs.gparted
