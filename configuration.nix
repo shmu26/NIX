@@ -157,7 +157,6 @@ pkgs.xfce.mousepad
      pkgs.zoom-us
      pkgs.libressl
      pkgs.hebcal
-     pkgs.nixnote2
      pkgs.gnome.gnome-tweaks    
      pkgs.gnome-extension-manager
      pkgs.git-credential-manager
@@ -173,10 +172,6 @@ pkgs.xfce.mousepad
      pkgs.yaru-theme 
  ];
 
-              nixpkgs.config.permittedInsecurePackages = [
-                "qtwebkit-5.212.0-alpha4"
-              ];
-  
   virtualisation.virtualbox.host.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
