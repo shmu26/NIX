@@ -1,3 +1,6 @@
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
+
 { config, pkgs, ... }:
 
 {
@@ -6,7 +9,7 @@
       ./hardware-configuration.nix
     ];
 
-  # Sane Scanner
+# Sane Scanner
      hardware.sane.enable = true; 
      hardware.sane.disabledDefaultBackends = [ ".*" ];
 
@@ -27,7 +30,7 @@
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
 
-  #local time
+#local time
   time.hardwareClockInLocalTime = true;
 
   # Select internationalisation properties.
@@ -48,9 +51,9 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  # Enable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -88,26 +91,15 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  #NTFS
+#NTFS
   boot.supportedFilesystems = [ "ntfs" ];
 
 #Automount
 
-  fileSystems."/run/media/shmuel/Timeshift" = {
-       device = "/dev/disk/by-uuid/701FE3AE54D4CE16";
-};
-
-fileSystems."/run/media/shmuel/VM" = {
-    device = "/dev/disk/by-uuid/f8c56958-b308-4a9c-a8e6-f2ba9a148860";
-};
-
 fileSystems."/run/media/shmuel/PersonalData" = {
     device = "/dev/disk/by-uuid/22EC446AEC4439F5";
 };
-
-#swap
-    zramSwap.enable = true;
-
+  
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shmuel = {
     isNormalUser = true;
@@ -115,25 +107,25 @@ fileSystems."/run/media/shmuel/PersonalData" = {
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
-      kate
     #  thunderbird
     ];
   };
 
-#Shell
-  users.users.shmuel.shell = pkgs.zsh;
+#swap
+    zramSwap.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-#Automatic updates
-  system.autoUpgrade.enable  = true;
-  system.autoUpgrade.allowReboot  = false;
+#Shell
+  users.users.shmuel.shell = pkgs.zsh;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     pkgs.xfce.mousepad
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #  wget
+pkgs.xfce.mousepad
      pkgs.deja-dup
      pkgs. duplicity
      pkgs.ntfs3g
@@ -151,8 +143,6 @@ fileSystems."/run/media/shmuel/PersonalData" = {
      pkgs.handbrake
      pkgs.media-downloader
      pkgs.inxi
-     pkgs.kio-admin
-     pkgs.konsave
      pkgs.simple-scan
      pkgs.git
      pkgs.gh
@@ -167,29 +157,37 @@ fileSystems."/run/media/shmuel/PersonalData" = {
      pkgs.zoom-us
      pkgs.libressl
      pkgs.hebcal
-     pkgs.ocs-url
+     pkgs.nixnote2
+     pkgs.gnome.gnome-tweaks    
+     pkgs.gnome-extension-manager
      pkgs.git-credential-manager
+     pkgs.gnomeExtensions.dash-to-panel
+     pkgs.gnomeExtensions.media-controls
+     pkgs.gnomeExtensions.appindicator
+     pkgs.gnomeExtensions.clipboard-indicator
+     pkgs.gnomeExtensions.arcmenu
+     pkgs.gnomeExtensions.lock-screen
+     pkgs.papirus-icon-theme
+     pkgs.caffeine-ng
+     pkgs.drawing
+     pkgs.yaru-theme 
+ ];
 
-  ];
-
-environment.plasma5.excludePackages = with pkgs.libsForQt5; [
-  plasma-browser-integration
-  oxygen
-];
-
+              nixpkgs.config.permittedInsecurePackages = [
+                "qtwebkit-5.212.0-alpha4"
+              ];
+  
   virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-  #programs.zsh.enable = true;
   # programs.gnupg.agent = {
   #   enable = true;
   #   enableSSHSupport = true;
   # };
 
- programs.zsh = {
+programs.zsh = {
    enable = true;
    autosuggestions.enable = true;
    shellInit = "neofetch|lolcat";
@@ -198,8 +196,8 @@ environment.plasma5.excludePackages = with pkgs.libsForQt5; [
     ll = "ls -l";
     fax = "brpcfax -o fax-number=025389272 /home/shmuel/Downloads/Fax/*";
     del = "rm /home/shmuel/Downloads/Fax/*";
-    bild = "sudo nixos-rebuild switch && cp /etc/nixos/configuration.nix ~/Documents/config && cd ~/Documents/config && git add configuration.nix && git commit -m config && git push origin master";
-    up = "sudo nix-channel --update && sudo nixos-rebuild switch && cd ~/Documents/config && git add configuration.nix && git commit -m config && git push origin master";
+    bild = "sudo nixos-rebuild switch && cp /etc/nixos/configuration.nix ~/Documents/config && cd ~/Documents/config && git add configuration.nix && git commit -m config && git push origin main";
+    up = "sudo nix-channel --update && sudo nixos-rebuild switch && cd ~/Documents/config && git add configuration.nix && git commit -m config && git push origin main";
     config = "sudo nano /etc/nixos/configuration.nix";
   };
 };
@@ -211,8 +209,8 @@ programs.zsh.ohMyZsh = {
 
 # Prevent the new user dialog in zsh
 system.userActivationScripts.zshrc = "touch .zshrc";
-  
-# List services that you want to enable:
+
+  # List services that you want to enable:
       services.flatpak.enable = true;
       services.avahi.enable = true;
 
@@ -231,7 +229,7 @@ system.userActivationScripts.zshrc = "touch .zshrc";
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
 
 }
 
