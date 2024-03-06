@@ -104,7 +104,7 @@ fileSystems."/run/media/shmuel/PersonalData" = {
   users.users.shmuel = {
     isNormalUser = true;
     description = "shmuel";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
     packages = with pkgs; [
       firefox
     #  thunderbird
@@ -130,7 +130,7 @@ pkgs.xfce.mousepad
      pkgs. duplicity
      pkgs.ntfs3g
      pkgs.google-chrome
-     pkgs.caffeine-ng
+     pkgs.todoist-electron
      pkgs.audacious
      pkgs.timeshift
      pkgs.gparted
