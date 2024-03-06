@@ -166,7 +166,6 @@ pkgs.xfce.mousepad
      pkgs.gnomeExtensions.arcmenu
      pkgs.gnomeExtensions.lock-screen
      pkgs.papirus-icon-theme
-     pkgs.caffeine-ng
      pkgs.drawing
      pkgs.yaru-theme 
  ];
