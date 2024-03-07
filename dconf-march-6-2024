@@ -44,8 +44,8 @@ window-height=615
 window-width=645
 
 [ca/desrt/dconf-editor]
-saved-pathbar-path='/'
-saved-view='/'
+saved-pathbar-path='/org/gnome/Console/last-window-size'
+saved-view='/org/gnome/'
 show-warning=false
 window-height=500
 window-is-maximized=false
@@ -79,7 +79,7 @@ sort-enabled-first=false
 release-check-time=uint32 1709268792
 
 [org/gnome/Console]
-last-window-size=(652, 480)
+last-window-size=(797, 562)
 
 [org/gnome/TextEditor]
 restore-session=false
@@ -114,7 +114,7 @@ window-position=(26, 23)
 window-size=(800, 600)
 
 [org/gnome/control-center]
-last-panel='power'
+last-panel='background'
 window-state=(980, 640, false)
 
 [org/gnome/deja-dup]
@@ -171,7 +171,7 @@ icon-theme='Papirus'
 toolkit-accessibility=false
 
 [org/gnome/desktop/notifications]
-application-children=['org-gnome-software', 'org-gnome-calendar', 'chrome-nlliaccamikgfncmkebcmomodchimcbo-default', 'google-chrome', 'gnome-printers-panel', 'masterpdfeditor4', 'org-gnome-evolution-alarm-notify', 'zoom', 'org-gnome-nautilus', 'org-gnome-baobab', 'appimagelauncher', 'apport-gtk', 'org-gnome-gedit', 'update-manager', 'us-zoom-zoom', 'timeshift-gtk', 'org-gnome-dejadup', 'org-kde-okular', 'appimagekit-70355c979df3abd551732e164ffb9162-losslesscut', 'snap-store-ubuntu-software', 'zoom-client-zoom-client', 'eversticky', 'org-gnome-console', 'firefox', 'chrome-chpiljhfemlfpnfoohpbokdofonkiifm-default']
+application-children=['org-gnome-software', 'org-gnome-calendar', 'chrome-nlliaccamikgfncmkebcmomodchimcbo-default', 'google-chrome', 'gnome-printers-panel', 'masterpdfeditor4', 'org-gnome-evolution-alarm-notify', 'zoom', 'org-gnome-nautilus', 'org-gnome-baobab', 'appimagelauncher', 'apport-gtk', 'org-gnome-gedit', 'update-manager', 'us-zoom-zoom', 'timeshift-gtk', 'org-gnome-dejadup', 'org-kde-okular', 'appimagekit-70355c979df3abd551732e164ffb9162-losslesscut', 'snap-store-ubuntu-software', 'zoom-client-zoom-client', 'eversticky', 'org-gnome-console', 'firefox', 'chrome-chpiljhfemlfpnfoohpbokdofonkiifm-default', 'chrome-knaiokfnmjjldlfhlioejgcompgenfhb-default']
 
 [org/gnome/desktop/notifications/application/appimagekit-70355c979df3abd551732e164ffb9162-losslesscut]
 application-id='appimagekit_70355c979df3abd551732e164ffb9162-LosslessCut.desktop'
@@ -184,6 +184,9 @@ application-id='apport-gtk.desktop'
 
 [org/gnome/desktop/notifications/application/chrome-chpiljhfemlfpnfoohpbokdofonkiifm-default]
 application-id='chrome-chpiljhfemlfpnfoohpbokdofonkiifm-Default.desktop'
+
+[org/gnome/desktop/notifications/application/chrome-knaiokfnmjjldlfhlioejgcompgenfhb-default]
+application-id='chrome-knaiokfnmjjldlfhlioejgcompgenfhb-Default.desktop'
 
 [org/gnome/desktop/notifications/application/chrome-nlliaccamikgfncmkebcmomodchimcbo-default]
 application-id='chrome-nlliaccamikgfncmkebcmomodchimcbo-Default.desktop'
@@ -318,7 +321,7 @@ size=(900, 700)
 state=87168
 
 [org/gnome/gnome-system-monitor]
-current-tab='disks'
+current-tab='processes'
 maximized=false
 network-total-in-bits=false
 show-dependencies=false
@@ -337,6 +340,9 @@ sort-order=0
 [org/gnome/mutter]
 overlay-key='Super_L'
 
+[org/gnome/nautilus/compression]
+default-compression-format='zip'
+
 [org/gnome/nautilus/preferences]
 default-folder-viewer='icon-view'
 migrated-gtk-settings=true
@@ -350,11 +356,14 @@ sidebar-width=344
 [org/gnome/portal/filechooser/chrome-chpiljhfemlfpnfoohpbokdofonkiifm-Default]
 last-folder-path='/home/shmuel/Downloads'
 
+[org/gnome/portal/filechooser/chrome-nlliaccamikgfncmkebcmomodchimcbo-Default]
+last-folder-path='/home/shmuel/Downloads'
+
 [org/gnome/portal/filechooser/google-chrome]
 last-folder-path='/home/shmuel/Downloads'
 
 [org/gnome/settings-daemon/plugins/color]
-night-light-last-coordinates=(31.772382951883859, 35.228700000000003)
+night-light-last-coordinates=(31.776240506235663, 35.228700000000003)
 
 [org/gnome/settings-daemon/plugins/power]
 sleep-inactive-ac-timeout=3600
@@ -373,6 +382,8 @@ welcome-dialog-last-shown-version='42.9'
 [org/gnome/shell/extensions/arcmenu]
 custom-menu-button-icon='/home/shmuel/Documents/nixos-icon-256x223-5nl9a9lw.png'
 distro-icon=5
+enable-menu-hotkey=false
+hide-overview-on-startup=true
 menu-background-color='rgba(48,48,49,0.98)'
 menu-border-color='rgb(60,60,60)'
 menu-button-appearance='Icon'
@@ -385,9 +396,9 @@ menu-item-hover-bg-color='rgb(21,83,158)'
 menu-item-hover-fg-color='rgb(255,255,255)'
 menu-separator-color='rgba(255,255,255,0.1)'
 override-menu-theme=true
-pinned-app-list=['VirtualBox', '', 'virtualbox.desktop', 'Google Chrome', '', 'google-chrome.desktop', 'Toggl Track', '', 'chrome-chpiljhfemlfpnfoohpbokdofonkiifm-Default.desktop', 'Todoist', '', 'chrome-knaiokfnmjjldlfhlioejgcompgenfhb-Default.desktop', 'To Do', '', 'chrome-nlliaccamikgfncmkebcmomodchimcbo-Default.desktop', 'GoldenDict-ng', '', 'io.github.xiaoyifang.goldendict_ng.desktop', 'Audacious', '', 'audacious.desktop', 'Timeshift', '', 'timeshift-gtk.desktop', 'ArcMenu Settings', 'ArcMenu_ArcMenuIcon', 'gnome-extensions prefs arcmenu@arcmenu.com', 'Extension Manager', '', 'com.mattjakeman.ExtensionManager.desktop', 'Tweaks', '', 'org.gnome.tweaks.desktop', 'Document Scanner', '', 'simple-scan.desktop']
+pinned-app-list=['VirtualBox', '', 'virtualbox.desktop', 'Google Chrome', '', 'google-chrome.desktop', 'Audacious', '', 'audacious.desktop', 'Toggl Track', '', 'chrome-chpiljhfemlfpnfoohpbokdofonkiifm-Default.desktop', 'Todoist', '', 'chrome-knaiokfnmjjldlfhlioejgcompgenfhb-Default.desktop', 'To Do', '', 'chrome-nlliaccamikgfncmkebcmomodchimcbo-Default.desktop', 'GoldenDict-ng', '', 'io.github.xiaoyifang.goldendict_ng.desktop', 'ArcMenu Settings', 'ArcMenu_ArcMenuIcon', 'gnome-extensions prefs arcmenu@arcmenu.com', 'Extension Manager', '', 'com.mattjakeman.ExtensionManager.desktop', 'Tweaks', '', 'org.gnome.tweaks.desktop', 'Document Scanner', '', 'simple-scan.desktop', 'Drawing', '', 'com.github.maoschanz.drawing.desktop', 'Document Viewer', '', 'org.gnome.Evince.desktop']
 prefs-visible-page=0
-recently-installed-apps=['ca.desrt.dconf-editor.desktop', 'masterpdfeditor4.desktop', 'display-im6.q16hdri.desktop', 'appimagelaunchersettings.desktop', 'appimagekit_b736db762a6e66788bf529184f1061d1-LosslessCut.desktop', 'snap-store_ubuntu-software.desktop', 'org.gnome.Software.desktop', 'com.github.maoschanz.drawing.desktop']
+recently-installed-apps=['masterpdfeditor4.desktop', 'display-im6.q16hdri.desktop', 'appimagelaunchersettings.desktop', 'appimagekit_b736db762a6e66788bf529184f1061d1-LosslessCut.desktop', 'snap-store_ubuntu-software.desktop', 'org.gnome.Software.desktop']
 search-entry-border-radius=(true, 25)
 show-activities-button=true
 
@@ -563,8 +574,9 @@ locations=@av []
 document-type='text'
 
 [org/gnome/software]
-check-timestamp=int64 1709744898
+check-timestamp=int64 1709785474
 first-run=false
+flatpak-purge-timestamp=int64 1709789014
 
 [org/gnome/system/location]
 enabled=true
