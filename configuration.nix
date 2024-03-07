@@ -177,6 +177,7 @@ pkgs.xfce.mousepad
      pkgs.gnomeExtensions.clipboard-indicator
      pkgs.gnomeExtensions.arcmenu
      pkgs.gnomeExtensions.lock-screen
+     pkgs.gnomeExtensions.executor     
      pkgs.papirus-icon-theme
      pkgs.drawing
      pkgs.yaru-theme 
