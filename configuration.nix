@@ -167,6 +167,7 @@ pkgs.xfce.mousepad
      pkgs.zoom-us
      pkgs.libressl
      pkgs.hebcal
+     pkgs.gnome.dconf-editor
      pkgs.gnome.gnome-tweaks    
      pkgs.gnome-extension-manager
      pkgs.git-credential-manager
