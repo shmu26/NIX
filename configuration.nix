@@ -100,6 +100,16 @@ fileSystems."/run/media/shmuel/PersonalData" = {
     device = "/dev/disk/by-uuid/22EC446AEC4439F5";
     options = ["nofail"];
 };
+
+fileSystems."/run/media/shmuel/TimeshiftBackup" = {
+    device = "/dev/disk/by-uuid/0d1a414b-a691-4a93-afb0-3c06623dd557";
+    options = ["nofail"];
+};
+
+fileSystems."/run/media/shmuel/VM" = {
+    device = "/dev/disk/by-uuid/701FE3AE54D4CE16";
+    options = ["nofail"];
+};
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shmuel = {
