@@ -98,6 +98,7 @@
 
 fileSystems."/run/media/shmuel/PersonalData" = {
     device = "/dev/disk/by-uuid/22EC446AEC4439F5";
+    options = ["nofail"];
 };
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
