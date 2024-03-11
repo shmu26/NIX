@@ -186,6 +186,7 @@ pkgs.xfce.mousepad
      pkgs.btrfs-assistant
  ];
 
+    #BTRFS automatic backup of Home
   services.btrbk.instances."btrbk" = {
     onCalendar = "*:1/10";
     settings = {
