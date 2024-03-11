@@ -182,6 +182,7 @@ pkgs.xfce.mousepad
      pkgs.drawing
      pkgs.yaru-theme 
 
+     pkgs.snapper
      pkgs.snapper-gui
      pkgs.btrfs-progs
      pkgs.btrfs-assistant
