@@ -101,8 +101,8 @@ fileSystems."/run/media/shmuel/PersonalData" = {
     options = ["nofail"];
 };
 
-fileSystems."/run/media/shmuel/TimeshiftBackup" = {
-    device = "/dev/disk/by-uuid/0d1a414b-a691-4a93-afb0-3c06623dd557";
+fileSystems."/run/media/shmuel/LinuxBackups" = {
+    device = "/dev/disk/by-uuid/af74cd67-484c-4de5-bb96-e86db774d910";
     options = ["nofail"];
 };
 
