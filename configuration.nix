@@ -56,8 +56,15 @@
   services.xserver.desktopManager.gnome.enable = true;
 
 # Enable the KDE Plasma Desktop Environment.
+<<<<<<< HEAD
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
+=======
+  #services.xserver.displayManager.sddm.enable = true;
+  #services.xserver.desktopManager.plasma5.enable = true;
+
+# programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
+>>>>>>> efbc874 (config)
 
   # Configure keymap in X11
   services.xserver = {
@@ -126,6 +133,7 @@ fileSystems."/run/media/shmuel/VM" = {
     ];
   };
 
+<<<<<<< HEAD
 users.users.shmuel-kde = {
     isNormalUser = true;
     description = "shmuel-kde";
@@ -137,6 +145,17 @@ users.users.shmuel-kde = {
   };
 
 programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
+=======
+#users.users.shmuel-kde = {
+#    isNormalUser = true;
+#    description = "shmuel-kde";
+#    extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
+#    packages = with pkgs; [
+#      firefox
+#    #  thunderbird
+#    ];
+#  };
+>>>>>>> efbc874 (config)
 
 #swap
     zramSwap.enable = true;
