@@ -189,7 +189,7 @@ pkgs.xfce.mousepad
      pkgs.btrfs-assistant
  ];
 
-    #BTRFS automatic backup of Home
+    #BTRFS automatic snapshots of Home
   services.btrbk.instances."btrbk" = {
     onCalendar = "*:0";
     settings = {
@@ -263,6 +263,8 @@ system.userActivationScripts.zshrc = "touch .zshrc";
 # sudo nix-channel --add https://channels.nixos.org/nixos-unstable
 # sudo nix-channel --update
 # sudo nixos-rebuild switch --upgrade
+
+# BTRFS subvolumes are defined in hardware-configuration.nix
 
 # Configure printer:
 # ipp://192.168.150.170:631
