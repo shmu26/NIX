@@ -52,19 +52,14 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  #services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
 # Enable the KDE Plasma Desktop Environment.
-<<<<<<< HEAD
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-=======
   #services.xserver.displayManager.sddm.enable = true;
   #services.xserver.desktopManager.plasma5.enable = true;
 
 # programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
->>>>>>> efbc874 (config)
 
   # Configure keymap in X11
   services.xserver = {
@@ -133,19 +128,6 @@ fileSystems."/run/media/shmuel/VM" = {
     ];
   };
 
-<<<<<<< HEAD
-users.users.shmuel-kde = {
-    isNormalUser = true;
-    description = "shmuel-kde";
-    extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
-    packages = with pkgs; [
-      firefox
-    #  thunderbird
-    ];
-  };
-
-programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
-=======
 #users.users.shmuel-kde = {
 #    isNormalUser = true;
 #    description = "shmuel-kde";
@@ -155,7 +137,6 @@ programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/
 #    #  thunderbird
 #    ];
 #  };
->>>>>>> efbc874 (config)
 
 #swap
     zramSwap.enable = true;
@@ -202,6 +183,7 @@ pkgs.xfce.mousepad
      pkgs.zoom-us
      pkgs.libressl
      pkgs.hebcal
+     pkgs.sticky
      pkgs.gnome.dconf-editor
      pkgs.gnome.gnome-tweaks    
      pkgs.gnome-extension-manager
