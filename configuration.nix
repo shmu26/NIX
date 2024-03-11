@@ -55,12 +55,6 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-# Enable the KDE Plasma Desktop Environment.
-  #services.xserver.displayManager.sddm.enable = true;
-  #services.xserver.desktopManager.plasma5.enable = true;
-
-# programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
-
   # Configure keymap in X11
   services.xserver = {
    xkb.layout = "us";
@@ -128,16 +122,6 @@ fileSystems."/run/media/shmuel/VM" = {
     ];
   };
 
-#users.users.shmuel-kde = {
-#    isNormalUser = true;
-#    description = "shmuel-kde";
-#    extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
-#    packages = with pkgs; [
-#      firefox
-#    #  thunderbird
-#    ];
-#  };
-
 #swap
     zramSwap.enable = true;
 
@@ -183,7 +167,6 @@ pkgs.xfce.mousepad
      pkgs.zoom-us
      pkgs.libressl
      pkgs.hebcal
-     pkgs.sticky
      pkgs.gnome.dconf-editor
      pkgs.gnome.gnome-tweaks    
      pkgs.gnome-extension-manager
@@ -198,6 +181,10 @@ pkgs.xfce.mousepad
      pkgs.papirus-icon-theme
      pkgs.drawing
      pkgs.yaru-theme 
+
+     pkgs.snapper-gui
+     pkgs.btrfs-progs
+     pkgs.btrfs-assistant
  ];
 
   virtualisation.virtualbox.host.enable = true;
