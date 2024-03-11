@@ -182,11 +182,20 @@ pkgs.xfce.mousepad
      pkgs.drawing
      pkgs.yaru-theme 
 
-     pkgs.snapper
-     pkgs.snapper-gui
      pkgs.btrfs-progs
      pkgs.btrfs-assistant
  ];
+
+  services.btrbk.instances."btrbk" = {
+    onCalendar = "*:1/10";
+    settings = {
+      snapshot_preserve_min = "7d";
+      volume."/" = {
+        subvolume = "/home";
+        snapshot_dir = ".snapshots";
+      };
+    };
+  };
 
   virtualisation.virtualbox.host.enable = true;
   #virtualisation.virtualbox.host.enableExtensionPack = true;
