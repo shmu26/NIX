@@ -122,6 +122,16 @@ fileSystems."/run/media/shmuel/VM" = {
     ];
   };
 
+users.users.shmuel-kde = {
+    isNormalUser = true;
+    description = "shmuel-kde";
+    extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
+    packages = with pkgs; [
+      firefox
+    #  thunderbird
+    ];
+  };
+
 #swap
     zramSwap.enable = true;
 
