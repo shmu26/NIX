@@ -181,6 +181,9 @@ pkgs.xfce.mousepad
      pkgs.papirus-icon-theme
      pkgs.drawing
      pkgs.yaru-theme 
+     pkgs.exfat
+     pkgs.exfatprogs 
+
 
      pkgs.btrfs-progs
      pkgs.btrfs-assistant
