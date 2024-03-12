@@ -196,9 +196,8 @@ pkgs.xfce.mousepad
       snapshot_preserve_min = "7d";
       volume."/" = {
         subvolume = "/home";
-        snapshot_dir = ".snapshots_home";
-
-     };
+        snapshot_dir = ".snapshots";
+       };
     };
   };
 
