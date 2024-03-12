@@ -197,7 +197,8 @@ pkgs.xfce.mousepad
       volume."/" = {
         subvolume = "/home";
         snapshot_dir = ".snapshots_home";
-      };
+
+     };
     };
   };
 
