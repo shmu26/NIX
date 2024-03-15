@@ -181,6 +181,7 @@ pkgs.xfce.mousepad
      pkgs.papirus-icon-theme
      pkgs.drawing
      pkgs.yaru-theme 
+     pkgs.qogir-icon-theme
      pkgs.exfat
      pkgs.exfatprogs 
 
