@@ -20,7 +20,7 @@
 
    shellAliases = {
     ll = "ls -l";
-    bild = "sudo nixos-rebuild switch --flake ~/nixos#nixos && git add .  && git commit -m config && git push origin nixos-kde";
+    bild = "cd /home/shmuel/nixos && sudo nixos-rebuild switch --flake ~/nixos#nixos && git add .  &&  git commit -m config && git push origin nixos-kde";
     up = "sudo nix-channel --update && sudo nixos-rebuild switch --flake ~/nixos#nixos";
     config = "nano ~/nixos/configuration.nix";
     hom = "nano ~/nixos/home.nix";
