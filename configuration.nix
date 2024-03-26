@@ -183,6 +183,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
    pkgs.zoom-us
    pkgs.exfat
    pkgs.exfatprogs
+   pkgs.filelight
   ];
 
   environment.plasma5.excludePackages = with pkgs.libsForQt5; [
