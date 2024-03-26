@@ -20,7 +20,7 @@
 
    shellAliases = {
     ll = "ls -l";
-    bild = "sudo nixos-rebuild switch --flake ~/nixos#nixos";
+    bild = "sudo nixos-rebuild switch --flake ~/nixos#nixos && git add .  && git commit -m config && git push origin nixos-kde";
     up = "sudo nix-channel --update && sudo nixos-rebuild switch --flake ~/nixos#nixos";
     config = "nano ~/nixos/configuration.nix";
     hom = "nano ~/nixos/home.nix";
@@ -37,8 +37,5 @@ programs.zsh.oh-my-zsh = {
   #add home manager channel
 #sudo nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 #sudo nix-channel --update
-<<<<<<< HEAD
+
 #This config is on nixos-kde branch of NIX
-=======
-#master channel on github
->>>>>>> bcf5704 (config)
