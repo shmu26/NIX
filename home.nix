@@ -37,4 +37,8 @@ programs.zsh.oh-my-zsh = {
   #add home manager channel
 #sudo nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 #sudo nix-channel --update
+<<<<<<< HEAD
 #This config is on master branch of NIX
+=======
+#master channel on github
+>>>>>>> bcf5704 (config)
