@@ -184,8 +184,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   pkgs.exfatprogs
   pkgs.filelight
   #pkgs.???
-  
- ];
+  ];
 
   environment.plasma5.excludePackages = with pkgs.libsForQt5; [
   plasma-browser-integration
