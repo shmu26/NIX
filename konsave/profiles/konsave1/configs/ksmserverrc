@@ -1,0 +1,37 @@
+[$Version]
+update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_value_default_enum
+
+[General]
+loginMode=emptySession
+
+[LegacySession: saved at previous logout]
+clientMachine1=localhost
+command1=firefox
+count=1
+
+[Session: saved at previous logout]
+clientId1=10e169786f000171134949500000013280005
+clientId2=10e169786f000171135079300000013280023
+clientId3=10e169786f000171135080800000013280025
+clientId4=10e169786f000171135109200000013280030
+count=4
+discardCommand1[$e]=rm,$HOME/.config/session/konsole_10e169786f000171134949500000013280005_1711351382_699664
+discardCommand2[$e]=rm,$HOME/.config/session/dolphin_10e169786f000171135079300000013280023_1711351382_699677
+discardCommand3[$e]=rm,$HOME/.config/session/kwrite_10e169786f000171135080800000013280025_1711351382_699677
+discardCommand4[$e]=rm,$HOME/.config/session/kwrite_10e169786f000171135109200000013280030_1711351382_699709
+program1=/etc/profiles/per-user/shmuel/bin/konsole
+program2=/run/current-system/sw/bin/dolphin
+program3=/etc/profiles/per-user/shmuel/bin/kwrite
+program4=/etc/profiles/per-user/shmuel/bin/kwrite
+restartCommand1=/etc/profiles/per-user/shmuel/bin/konsole,-session,10e169786f000171134949500000013280005_1711351382_699664,-name,konsole
+restartCommand2=/run/current-system/sw/bin/dolphin,-session,10e169786f000171135079300000013280023_1711351382_699677,-name,dolphin
+restartCommand3=/etc/profiles/per-user/shmuel/bin/kwrite,-session,10e169786f000171135080800000013280025_1711351382_699677,-name,kwrite
+restartCommand4=/etc/profiles/per-user/shmuel/bin/kwrite,-session,10e169786f000171135109200000013280030_1711351382_699709,-name,kwrite
+restartStyleHint1=0
+restartStyleHint2=0
+restartStyleHint3=0
+restartStyleHint4=0
+userId1=shmuel
+userId2=shmuel
+userId3=shmuel
+userId4=shmuel

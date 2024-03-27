@@ -1,0 +1,28 @@
+[$Version]
+update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
+
+[1]
+Description=Window settings for virtualbox machine
+clientmachine=localhost
+noborder=true
+noborderrule=2
+title=Win10 [Running] - Oracle VM VirtualBox
+titlematch=1
+types=1
+wmclass=virtualbox machine
+wmclassmatch=1
+
+[301c1ade-b1da-4063-bf9e-5f2a912e658f]
+Description=Window settings for virtualbox machine
+clientmachine=localhost
+noborder=true
+noborderrule=2
+title=Win10 [Running] - Oracle VM VirtualBox
+titlematch=1
+types=1
+wmclass=virtualbox machine
+wmclassmatch=1
+
+[General]
+count=1
+rules=1
