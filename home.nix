@@ -18,6 +18,8 @@
     autoconnect = ["qemu:///system"];
     uris = ["qemu:///system"];
   };
+};
+
 
 
   programs.zsh = {
