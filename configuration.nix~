@@ -129,7 +129,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   users.users.shmuel = {
     isNormalUser = true;
     description = "shmuel";
-    extraGroups = [ "networkmanager" "wheel" "vboxusers" "scanner" "lp" ];
+    extraGroups = [ "networkmanager" "wheel" "vboxusers" "scanner" "lp" "libvirtd" ];
     packages = with pkgs; [
       firefox
       kate
@@ -198,7 +198,8 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
 
   #virtualisation.virtualbox.host.enable = true;
   #virtualisation.virtualbox.host.enableExtensionPack = true;
-
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
