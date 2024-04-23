@@ -39,4 +39,7 @@ programs.zsh.oh-my-zsh = {
 #sudo nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 #sudo nix-channel --update
 
+#then add "pkgs.git" to "environment.systemPackages = with pkgs; [" in "/etc/nixos/configuration.nix" and then run "sudo nixos-rebuild switch"
+
+
 #This config is on nixos-kde branch of NIX
