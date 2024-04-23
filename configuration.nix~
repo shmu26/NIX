@@ -183,6 +183,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   pkgs.exfat
   pkgs.exfatprogs
   pkgs.filelight
+  pkgs.virtio-win
   #pkgs.???
   
  ];

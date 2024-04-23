@@ -184,6 +184,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   pkgs.exfatprogs
   pkgs.filelight
   pkgs.virtio-win
+  pkgs.quickemu
   #pkgs.???
   
  ];
