@@ -58,7 +58,7 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
@@ -183,9 +183,14 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   pkgs.exfat
   pkgs.exfatprogs
   pkgs.filelight
-  pkgs.virtio-win
-  pkgs.quickemu
-  #pkgs.???
+  pkgs.btrfs-progs
+
+  #pkgs.linuxKernel.packages.linux_6_8.vmware
+  pkgs.vmware-workstation
+#  pkgs.vmfs-tools
+ # pkgs.ovftool 
+   
+#pkgs.???
   
  ];
 
