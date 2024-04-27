@@ -201,7 +201,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
     settings = {
       snapshot_preserve_min = "7d";
       volume."/" = {
-        subvolume = "/home";
+        subvolume = "@home";
         snapshot_dir = ".snapshots";
        };
     };
