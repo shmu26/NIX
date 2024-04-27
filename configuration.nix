@@ -105,8 +105,8 @@
 
   #Automount
 
-fileSystems."/run/media/shmuel/VM" = {
-    device = "/dev/disk/by-uuid/701FE3AE54D4CE16";
+fileSystems."/run/media/shmuel/Virt" = {
+    device = "/dev/disk/by-uuid/3c5cf6a5-6243-46a7-b651-b07f70b8bfe5";
     options = ["nofail"];
 };
 
