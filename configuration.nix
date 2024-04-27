@@ -216,10 +216,12 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
                 "electron-22.3.27"
               ];
 
+  virtualisation.vmware.host.enable = true;
   #virtualisation.virtualbox.host.enable = true;
   #virtualisation.virtualbox.host.enableExtensionPack = true;
   #virtualisation.libvirtd.enable = true;
   #programs.virt-manager.enable = true;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -233,6 +235,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
 
   services.flatpak.enable = true;
   services.avahi.enable = true;
+  services.btrfs.autoScrub.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
