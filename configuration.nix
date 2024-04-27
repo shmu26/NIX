@@ -185,10 +185,10 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   pkgs.filelight
   pkgs.btrfs-progs
 
-  #pkgs.linuxKernel.packages.linux_6_8.vmware
+  pkgs.linuxKernel.packages.linux_6_8.vmware
   pkgs.vmware-workstation
-#  pkgs.vmfs-tools
- # pkgs.ovftool 
+  pkgs.vmfs-tools
+  pkgs.ovftool
    
 #pkgs.???
   
