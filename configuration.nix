@@ -184,6 +184,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   pkgs.exfatprogs
   pkgs.filelight
   pkgs.btrfs-progs
+  pkgs.btrfs-assistant
 
   pkgs.linuxKernel.packages.linux_6_8.vmware
   pkgs.vmware-workstation
@@ -193,6 +194,18 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
 #pkgs.???
   
  ];
+
+ #BTRFS automatic snapshots of Home
+  services.btrbk.instances."btrbk" = {
+    onCalendar = "*:0";
+    settings = {
+      snapshot_preserve_min = "7d";
+      volume."/" = {
+        subvolume = "/home";
+        snapshot_dir = ".snapshots";
+       };
+    };
+  };
 
   environment.plasma5.excludePackages = with pkgs.libsForQt5; [
   plasma-browser-integration
