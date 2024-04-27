@@ -129,7 +129,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   users.users.shmuel = {
     isNormalUser = true;
     description = "shmuel";
-    extraGroups = [ "networkmanager" "wheel" "vboxusers" "scanner" "lp" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" ];
     packages = with pkgs; [
       firefox
       kate
