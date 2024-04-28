@@ -105,8 +105,8 @@
 
   #Automount
 
-fileSystems."/run/media/shmuel/VM" = {
-    device = "/dev/disk/by-uuid/701FE3AE54D4CE16";
+fileSystems."/run/media/shmuel/Virt" = {
+    device = "/dev/disk/by-uuid/3c5cf6a5-6243-46a7-b651-b07f70b8bfe5";
     options = ["nofail"];
 };
 
@@ -129,7 +129,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   users.users.shmuel = {
     isNormalUser = true;
     description = "shmuel";
-    extraGroups = [ "networkmanager" "wheel" "vboxusers" "scanner" "lp" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" ];
     packages = with pkgs; [
       firefox
       kate
@@ -183,16 +183,29 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   pkgs.exfat
   pkgs.exfatprogs
   pkgs.filelight
-  pkgs.virtio-win
-  pkgs.quickemu
+  pkgs.btrfs-progs
+  pkgs.btrfs-assistant
+
   pkgs.linuxKernel.packages.linux_6_8.vmware
   pkgs.vmware-workstation
   pkgs.vmfs-tools
-  pkgs.ovftool 
+  pkgs.ovftool
    
 #pkgs.???
   
  ];
+
+ #BTRFS automatic snapshots of Home
+  services.btrbk.instances."btrbk" = {
+    onCalendar = "*:0";
+    settings = {
+      snapshot_preserve_min = "7d";
+      volume."/" = {
+        subvolume = "@home";
+        snapshot_dir = ".snapshots";
+       };
+    };
+  };
 
   environment.plasma5.excludePackages = with pkgs.libsForQt5; [
   plasma-browser-integration
@@ -203,10 +216,12 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
                 "electron-22.3.27"
               ];
 
+  virtualisation.vmware.host.enable = true;
   #virtualisation.virtualbox.host.enable = true;
   #virtualisation.virtualbox.host.enableExtensionPack = true;
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
+  #virtualisation.libvirtd.enable = true;
+  #programs.virt-manager.enable = true;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -220,6 +235,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
 
   services.flatpak.enable = true;
   services.avahi.enable = true;
+  services.btrfs.autoScrub.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
