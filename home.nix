@@ -29,7 +29,7 @@
    shellAliases = {
     ll = "ls -l";
     bild = "cd /home/shmuel/nixos && sudo nixos-rebuild switch --flake ~/nixos#nixos && git add .  &&  git commit -m config && git push origin nixos-kde";
-    up = "sudo nix-channel --update && sudo nixos-rebuild switch --flake ~/nixos#nixos";
+    up = "sudo nix-channel --update && sudo nixos-rebuild switch --flake ~/nixos#nixos && cd /home/shmuel/nixos && sudo nix flake update";
     config = "nano -m -q -l +c/#pkgs -B ~/nixos/configuration.nix";
     hom = "nano -m -q -l -B ~/nixos/home.nix";
     nan = "nano -m -q -l";
