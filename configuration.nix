@@ -211,8 +211,8 @@ services.btrbk.instances."btrbk" = {
     };
   };
 
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
+ # virtualisation.virtualbox.host.enable = true;
+ #  virtualisation.virtualbox.host.enableExtensionPack = true;
   virtualisation.vmware.host.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
