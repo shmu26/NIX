@@ -188,6 +188,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
      pkgs.btrfs-assistant
      pkgs.anydesk
      pkgs.btrbk     
+     pkgs.gnome.pomodoro
 
      #pkgs
   ];
