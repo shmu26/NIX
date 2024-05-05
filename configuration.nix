@@ -189,6 +189,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
      pkgs.anydesk
      pkgs.btrbk     
      pkgs.gnome.pomodoro
+     pkgs.clipman
 
      #pkgs
   ];
