@@ -34,7 +34,7 @@
   fileSystems."/var" =
     { device = "/dev/disk/by-uuid/ee8be690-3bb7-4ca8-9b9b-28f77995fd6d";
       fsType = "btrfs";
-      options = [ "subvol=var" "compress=zstd" ];
+      options = [ "subvol=var" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/boot" =
