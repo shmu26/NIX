@@ -186,7 +186,8 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
      pkgs.exfatprogs 
      pkgs.btrfs-progs
      pkgs.btrfs-assistant
-     
+     pkgs.anydesk
+
      #pkgs
   ];
   
