@@ -205,6 +205,7 @@ services.btrbk.instances."btrbk" = {
         subvolume = {
           "/home" = {};
           "/var" = {};
+          "/root" = {};
           };
         snapshot_dir = ".snapshots";
        };
