@@ -187,7 +187,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
      pkgs.btrfs-progs
      pkgs.btrfs-assistant
      pkgs.anydesk
-     pkgs.sticky
+     
      #pkgs
   ];
   
