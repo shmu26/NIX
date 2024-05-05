@@ -191,16 +191,25 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
      #pkgs
   ];
   
-   #BTRFS automatic snapshots of Home
-  services.btrbk.instances."btrbk" = {
-    onCalendar = "*:0";
-    settings = {
-      snapshot_preserve_min = "7d";
-      volume."/" = {
-        subvolume = "/home";
-        snapshot_dir = ".snapshots";
-       };
-    };
+environment.etc = {
+    "btrbk.conf".text = ''
+      snapshot_preserve_min   7d
+      volume /
+        snapshot_dir .snapshots
+        subvolume home
+        subvolume var   
+    '';
+  };
+  
+  systemd.services.btrfs-snapshot = {
+    startAt = "*:0";
+    enable = true;
+    path = with pkgs; [btrbk];
+    serviceConfig.Type = "oneshot";
+    script = ''
+      mkdir -p /.snapshots
+      btrbk run
+    '';
   };
 
   virtualisation.virtualbox.host.enable = true;
