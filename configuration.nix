@@ -189,7 +189,11 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
      pkgs.anydesk
      pkgs.btrbk     
      pkgs.gnome.pomodoro
-     
+     pkgs.linuxKernel.packages.linux_6_8.vmware
+     pkgs.vmware-workstation
+     pkgs.vmfs-tools
+     pkgs.ovftool     
+
      #pkgs
   ];
   
@@ -209,6 +213,7 @@ services.btrbk.instances."btrbk" = {
 
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.vmware.host.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
