@@ -1,7 +1,8 @@
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+# Edit this configuration file to define what should be installed on
+# your system. Help is available in the configuration.nix(5) man page, on
+# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports =
@@ -13,25 +14,25 @@
      hardware.sane.enable = true; 
      hardware.sane.disabledDefaultBackends = [ ".*" ];
 
-  # Bootloader.
+
+  # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  # networking.hostName = "nixos"; # Define your hostname.
+  # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+
+  # Set your time zone.
+   time.timeZone = "Asia/Jerusalem";
+
+  #local time
+  time.hardwareClockInLocalTime = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Asia/Jerusalem";
-
-#local time
-  time.hardwareClockInLocalTime = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -48,18 +49,19 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
+
+# Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  
 
   # Configure keymap in X11
-  services.xserver = {
-   xkb.layout = "us";
-    xkb.variant = "";
-  };
+  # services.xserver.xkb.layout = "us";
+  # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -71,7 +73,7 @@
     pkgs.brgenml1cupswrapper
 ];
 
-  # Enable sound with pipewire.
+ # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -106,13 +108,8 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
     options = ["nofail"];
 };
 
-fileSystems."/run/media/shmuel/VM" = {
-    device = "/dev/disk/by-uuid/701FE3AE54D4CE16";
-    options = ["nofail"];
-};
-  
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.shmuel = {
+    users.users.shmuel = {
     isNormalUser = true;
     description = "shmuel";
     extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
@@ -133,10 +130,10 @@ fileSystems."/run/media/shmuel/VM" = {
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-pkgs.xfce.mousepad
+   environment.systemPackages = with pkgs; [
+  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #   wget
+     pkgs.xfce.mousepad
      pkgs.deja-dup
      pkgs. duplicity
      pkgs.ntfs3g
@@ -184,13 +181,13 @@ pkgs.xfce.mousepad
      pkgs.qogir-icon-theme
      pkgs.exfat
      pkgs.exfatprogs 
-
-
      pkgs.btrfs-progs
      pkgs.btrfs-assistant
- ];
-
-    #BTRFS automatic snapshots of Home
+     
+     #pkgs
+  ];
+  
+   #BTRFS automatic snapshots of Home
   services.btrbk.instances."btrbk" = {
     onCalendar = "*:0";
     settings = {
@@ -224,7 +221,7 @@ programs.zsh = {
     del = "rm /home/shmuel/Downloads/Fax/*";
     bild = "sudo nixos-rebuild switch && cp /etc/nixos/configuration.nix ~/Documents/config && cd ~/Documents/config && git add .  && git commit -m config && git push origin main";
     up = "sudo nix-channel --update && sudo nixos-rebuild switch && cd ~/Documents/config && git add configuration.nix && git commit -m config && git push origin main";
-    config = "sudo nano /etc/nixos/configuration.nix";
+    config = "sudo nano -m -q -l +c/#pkgs -B  /etc/nixos/configuration.nix";
   };
 };
 programs.zsh.ohMyZsh = {
@@ -236,13 +233,19 @@ programs.zsh.ohMyZsh = {
 # Prevent the new user dialog in zsh
 system.userActivationScripts.zshrc = "touch .zshrc";
 
+
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
+
   # List services that you want to enable:
-      services.flatpak.enable = true;
-      services.avahi.enable = true;
-      services.btrfs.autoScrub.enable = true;
 
   # Enable the OpenSSH daemon.
-    services.openssh.enable = true;
+  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -250,23 +253,29 @@ system.userActivationScripts.zshrc = "touch .zshrc";
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  # Copy the NixOS configuration file and link it from the resulting system
+  # (/run/current-system/configuration.nix). This is useful in case you
+  # accidentally delete configuration.nix.
+  # system.copySystemConfiguration = true;
+
+  # This option defines the first version of NixOS you have installed on this particular machine,
+  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
+  #
+  # Most users should NEVER change this value after the initial install, for any reason,
+  # even if you've upgraded your system to a new NixOS release.
+  #
+  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
+  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
+  # to actually do that.
+  #
+  # This value being lower than the current NixOS release does NOT mean your system is
+  # out of date, out of support, or vulnerable.
+  #
+  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
+  # and migrated your data accordingly.
+  #
+  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
 
-# Set channel by running this command:
-# sudo nix-channel --add https://channels.nixos.org/nixos-unstable
-# sudo nix-channel --update
-# sudo nixos-rebuild switch --upgrade
-
-# BTRFS subvolumes are defined in hardware-configuration.nix
-
-# Configure printer:
-# ipp://192.168.150.170:631
-# Brother MFC-L2710DW series, using brlaser v6
