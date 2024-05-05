@@ -246,6 +246,9 @@ system.userActivationScripts.zshrc = "touch .zshrc";
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+      services.flatpak.enable = true;
+      services.avahi.enable = true;
+      services.btrfs.autoScrub.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -278,4 +281,15 @@ system.userActivationScripts.zshrc = "touch .zshrc";
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
+
+# Set channel by running this command:
+# sudo nix-channel --add https://channels.nixos.org/nixos-unstable
+# sudo nix-channel --update
+# sudo nixos-rebuild switch --upgrade
+
+# BTRFS subvolumes are defined in hardware-configuration.nix
+
+# Configure printer:
+# ipp://192.168.150.170:631
+# Brother MFC-L2710DW series, using brlaser v6
 
