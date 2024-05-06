@@ -175,20 +175,9 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
      pkgs.fh
      pkgs.filelight
      pkgs.parted
-     pkgs.gnome.dconf-editor
-     pkgs.gnome.gnome-tweaks    
-     pkgs.gnome-extension-manager
      pkgs.git-credential-manager
-     pkgs.gnomeExtensions.dash-to-panel
-     pkgs.gnomeExtensions.media-controls
-     pkgs.gnomeExtensions.appindicator
-     pkgs.gnomeExtensions.clipboard-indicator
-     pkgs.gnomeExtensions.arcmenu
-     pkgs.gnomeExtensions.lock-screen
-     pkgs.gnomeExtensions.executor     
      pkgs.papirus-icon-theme
      pkgs.drawing
-     pkgs.yaru-theme 
      pkgs.qogir-icon-theme
      pkgs.exfat
      pkgs.exfatprogs 
@@ -196,7 +185,6 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
      pkgs.btrfs-assistant
      pkgs.anydesk
      pkgs.btrbk     
-     pkgs.gnome.pomodoro
      pkgs.linuxKernel.packages.linux_6_8.vmware
      pkgs.vmware-workstation
      pkgs.vmfs-tools
