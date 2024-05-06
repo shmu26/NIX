@@ -194,6 +194,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
      pkgs.vmfs-tools
      pkgs.ovftool     
      pkgs.tartube-yt-dlp     
+     pkgs.ffmpeg_5-full
 
      #pkgs
   ];
