@@ -196,6 +196,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
      pkgs.tartube-yt-dlp     
      pkgs.ffmpeg_5-full
      pkgs.mplayer
+     pkgs.kuro
 
      #pkgs
   ];
