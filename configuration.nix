@@ -57,9 +57,9 @@
   services.xserver.enable = true;
 
 
-# Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+# Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
   
 
   # Configure keymap in X11
@@ -140,6 +140,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
      pkgs.deja-dup
      pkgs. duplicity
      pkgs.ntfs3g
+     pkgs.caffeine-ng
      pkgs.google-chrome
      pkgs.audacious
      pkgs.timeshift
@@ -167,6 +168,13 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
      pkgs.zoom-us
      pkgs.libressl
      pkgs.hebcal
+     pkgs.kio-admin
+     pkgs.zram-generator
+     pkgs.konsave
+     pkgs.galculator
+     pkgs.fh
+     pkgs.filelight
+     pkgs.parted
      pkgs.gnome.dconf-editor
      pkgs.gnome.gnome-tweaks    
      pkgs.gnome-extension-manager
@@ -200,6 +208,11 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
 
      #pkgs
   ];
+  
+  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+  plasma-browser-integration
+  oxygen
+];
   
 services.btrbk.instances."btrbk" = {
     onCalendar = "*:0";
@@ -240,6 +253,7 @@ programs.zsh = {
     bild = "sudo nixos-rebuild switch && cp /etc/nixos/configuration.nix ~/Documents/config && cd ~/Documents/config && git add .  && git commit -m config && git push origin main";
     up = "sudo nix-channel --update && sudo nixos-rebuild switch && cd ~/Documents/config && git add configuration.nix && git commit -m config && git push origin main";
     config = "sudo nano -m -q -l +c/#pkgs -B  /etc/nixos/configuration.nix";
+    nan = "nano -m -q -l";
   };
 };
 programs.zsh.ohMyZsh = {
