@@ -193,7 +193,8 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
      pkgs.vmware-workstation
      pkgs.vmfs-tools
      pkgs.ovftool     
-     
+     pkgs.tartube-yt-dlp     
+
      #pkgs
   ];
   
