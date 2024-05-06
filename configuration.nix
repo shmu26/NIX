@@ -193,7 +193,8 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
      pkgs.ffmpeg_5-full
      pkgs.mplayer
      pkgs.kuro
-
+     pkgs.kdePackages.kate
+     
      #pkgs
   ];
   
