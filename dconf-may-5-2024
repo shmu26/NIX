@@ -125,8 +125,8 @@ window-state=(980, 640, false)
 backend='local'
 delete-after=90
 exclude-list=['$TRASH', '$DOWNLOAD', '/home/shmuel/.config/google-chrome']
-last-backup='2024-05-05T00:13:26.771483Z'
-last-run='2024-05-05T00:13:24.166466Z'
+last-backup='2024-05-06T00:13:27.826232Z'
+last-run='2024-05-06T00:13:24.144599Z'
 nag-check='2024-03-10T20:05:20.455587Z'
 periodic=true
 periodic-period=1
@@ -300,8 +300,21 @@ titlebar-font='Sans 10'
 background-color='rgb(0,0,0)'
 use-background-color=true
 
+[org/gnome/evince]
+document-directory=@ms 'file:///run/media/shmuel/PersonalData/DBS%20Tzuras%20Hadaf/%D7%AA%D7%9C%D7%9E%D7%95%D7%93%20%D7%91%D7%91%D7%9C%D7%99/%D7%A9%D7%A1%20%D7%A0%D7%94%D7%A8%D7%93%D7%A2%D7%90'
+
 [org/gnome/evince/default]
-window-ratio=(2.5483977180333155, 1.0856525199254059)
+continuous=true
+dual-page=false
+dual-page-odd-left=false
+enable-spellchecking=true
+fullscreen=false
+inverted-colors=false
+show-sidebar=false
+sidebar-page='thumbnails'
+sidebar-size=132
+sizing-mode='automatic'
+window-ratio=(0.46826923076923077, 0.25474722564734897)
 
 [org/gnome/evolution-data-server]
 migrated=true
@@ -386,12 +399,12 @@ ticking-sound=''
 ticking-sound-volume=0.20000000000000001
 
 [org/gnome/pomodoro/state]
-timer-date='2024-05-05T14:16:13+0000'
+timer-date='2024-05-06T00:10:24+0000'
 timer-elapsed=0.0
 timer-paused=false
-timer-score=2.5412331446011862
+timer-score=0.0
 timer-state='null'
-timer-state-date='2024-05-05T14:16:13+0000'
+timer-state-date='2024-05-06T00:10:24+0000'
 timer-state-duration=0.0
 
 [org/gnome/portal/filechooser/chrome-chpiljhfemlfpnfoohpbokdofonkiifm-Default]
@@ -407,7 +420,7 @@ last-folder-path='/home/shmuel/Pictures'
 last-folder-path='/home/shmuel/Downloads'
 
 [org/gnome/settings-daemon/plugins/color]
-night-light-last-coordinates=(31.783511054017943, 35.228700000000003)
+night-light-last-coordinates=(31.778441784269226, 35.228700000000003)
 
 [org/gnome/settings-daemon/plugins/power]
 sleep-inactive-ac-timeout=3600
@@ -417,9 +430,9 @@ sleep-inactive-ac-type='nothing'
 app-picker-layout=[{'org.gnome.Geary.desktop': <{'position': <0>}>, 'org.gnome.Contacts.desktop': <{'position': <1>}>, 'org.gnome.Weather.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Maps.desktop': <{'position': <4>}>, 'org.gnome.Totem.desktop': <{'position': <5>}>, 'audacious.desktop': <{'position': <6>}>, 'org.gnome.Calculator.desktop': <{'position': <7>}>, 'caffeine.desktop': <{'position': <8>}>, 'simple-scan.desktop': <{'position': <9>}>, 'org.gnome.Snapshot.desktop': <{'position': <10>}>, 'org.gnome.Settings.desktop': <{'position': <11>}>, 'conky.desktop': <{'position': <12>}>, 'org.gnome.Extensions.desktop': <{'position': <13>}>, 'firefox.desktop': <{'position': <14>}>, 'Utilities': <{'position': <15>}>, 'galculator.desktop': <{'position': <16>}>, 'yelp.desktop': <{'position': <17>}>, 'io.github.xiaoyifang.goldendict_ng.desktop': <{'position': <18>}>, 'gparted.desktop': <{'position': <19>}>, 'fr.handbrake.ghb.desktop': <{'position': <20>}>, 'startcenter.desktop': <{'position': <21>}>, 'base.desktop': <{'position': <22>}>, 'calc.desktop': <{'position': <23>}>}, {'draw.desktop': <{'position': <0>}>, 'impress.desktop': <{'position': <1>}>, 'math.desktop': <{'position': <2>}>, 'writer.desktop': <{'position': <3>}>, 'losslesscut.desktop': <{'position': <4>}>, 'cups.desktop': <{'position': <5>}>, 'media-downloader.desktop': <{'position': <6>}>, 'org.xfce.mousepad.desktop': <{'position': <7>}>, 'nixos-manual.desktop': <{'position': <8>}>, 'virtualbox.desktop': <{'position': <9>}>, 'smplayer.desktop': <{'position': <10>}>, 'org.gnome.TextEditor.desktop': <{'position': <11>}>, 'timeshift-gtk.desktop': <{'position': <12>}>, 'org.gnome.Tour.desktop': <{'position': <13>}>, 'vlc.desktop': <{'position': <14>}>, 'xterm.desktop': <{'position': <15>}>, 'Zoom.desktop': <{'position': <16>}>, 'org.gnome.Calendar.desktop': <{'position': <17>}>, 'google-chrome.desktop': <{'position': <18>}>, 'org.gnome.Loupe.desktop': <{'position': <19>}>, 'org.gnome.Music.desktop': <{'position': <20>}>, 'org.gnome.Epiphany.desktop': <{'position': <21>}>}]
 command-history=['r']
 disable-user-extensions=false
-disabled-extensions=['shortcutbutton@antoine-meloche.github.com', 'show-desktop-button@amivaleo', 'blur-my-shell@aunetx', 'transparent-top-bar@ftpix.com', 'GmailMessageTray@shuming0207.gmail.com', 'always-indicator@martin.zurowietz.de', 'Panel_Favorites@rmy.pobox.com', 'show_applications_instead_of_overview@fawtytoo', 'dash-to-dock@micxgx.gmail.com', 'order-extensions@wa4557.github.com', 'no-titlebar-when-maximized@alec.ninja', 'all-windows-srwp@jkavery.github.io', 'caffeine@patapon.info', 'date-menu-formatter@marcinjakubowski.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com']
-enabled-extensions=['clipboard-indicator@tudmotu.com', 'extension-list@tu.berry', 'mediacontrols@cliffniff.github.com', 'sound-output-device-chooser@kgshank.net', 'application_view_when_empty@fawtytoo', 'arcmenu@arcmenu.com', 'ControlBlurEffectOnLockScreen@pratap.fastmail.fm', 'aztaskbar@aztaskbar.gitlab.com', 'dash-to-panel@jderose9.github.com', 'unlockDialogBackground@sun.wxg@gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'executor@raujonas.github.io', 'pixel-saver@deadalnix.me', 'appindicatorsupport@rgcjonas.gmail.com', 'lockscreen@lfarkas.org']
-favorite-apps=['org.gnome.Nautilus.desktop', 'gnome-system-monitor.desktop', 'org.gnome.Console.desktop', 'org.gnome.TextEditor.desktop', 'chrome-chpiljhfemlfpnfoohpbokdofonkiifm-Default.desktop', 'google-chrome.desktop', 'io.github.xiaoyifang.goldendict_ng.desktop', 'org.gnome.Pomodoro.desktop']
+disabled-extensions=['shortcutbutton@antoine-meloche.github.com', 'show-desktop-button@amivaleo', 'blur-my-shell@aunetx', 'transparent-top-bar@ftpix.com', 'GmailMessageTray@shuming0207.gmail.com', 'always-indicator@martin.zurowietz.de', 'Panel_Favorites@rmy.pobox.com', 'show_applications_instead_of_overview@fawtytoo', 'dash-to-dock@micxgx.gmail.com', 'order-extensions@wa4557.github.com', 'no-titlebar-when-maximized@alec.ninja', 'all-windows-srwp@jkavery.github.io', 'caffeine@patapon.info', 'date-menu-formatter@marcinjakubowski.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'executor@raujonas.github.io']
+enabled-extensions=['clipboard-indicator@tudmotu.com', 'extension-list@tu.berry', 'mediacontrols@cliffniff.github.com', 'sound-output-device-chooser@kgshank.net', 'application_view_when_empty@fawtytoo', 'arcmenu@arcmenu.com', 'ControlBlurEffectOnLockScreen@pratap.fastmail.fm', 'aztaskbar@aztaskbar.gitlab.com', 'dash-to-panel@jderose9.github.com', 'unlockDialogBackground@sun.wxg@gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'pixel-saver@deadalnix.me', 'appindicatorsupport@rgcjonas.gmail.com', 'lockscreen@lfarkas.org', 'pomodoro@arun.codito.in']
+favorite-apps=['org.gnome.Nautilus.desktop', 'gnome-system-monitor.desktop', 'org.gnome.Console.desktop', 'org.gnome.TextEditor.desktop', 'chrome-chpiljhfemlfpnfoohpbokdofonkiifm-Default.desktop', 'google-chrome.desktop', 'io.github.xiaoyifang.goldendict_ng.desktop', 'org.gnome.Pomodoro.desktop', 'audacious.desktop']
 last-selected-power-profile='performance'
 welcome-dialog-last-shown-version='42.9'
 
@@ -442,9 +455,9 @@ menu-separator-color='rgba(255,255,255,0.1)'
 multi-monitor=true
 override-menu-theme=true
 pinned-app-list=@as []
-pinned-apps=[{'name': 'conky', 'id': 'conky.desktop'}, {'id': 'vmware-workstation.desktop'}, {'name': 'Google Chrome', 'id': 'google-chrome.desktop'}, {'name': 'Audacious', 'id': 'audacious.desktop'}, {'name': 'To Do', 'id': 'chrome-nlliaccamikgfncmkebcmomodchimcbo-Default.desktop'}, {'name': 'GoldenDict-ng', 'id': 'io.github.xiaoyifang.goldendict_ng.desktop'}, {'name': 'ArcMenu Settings', 'icon': 'ArcMenu_ArcMenuIcon', 'id': 'gnome-extensions prefs arcmenu@arcmenu.com'}, {'name': 'Extension Manager', 'id': 'com.mattjakeman.ExtensionManager.desktop'}, {'name': 'Tweaks', 'id': 'org.gnome.tweaks.desktop'}, {'name': 'Document Scanner', 'id': 'simple-scan.desktop'}, {'name': 'Drawing', 'id': 'com.github.maoschanz.drawing.desktop'}, {'name': 'Document Viewer', 'id': 'org.gnome.Evince.desktop'}, {'name': 'Backups', 'id': 'org.gnome.DejaDup.desktop'}, {'name': 'Btrfs Assistant', 'id': 'btrfs-assistant.desktop'}]
+pinned-apps=[{'name': 'conky', 'id': 'conky.desktop'}, {'id': 'vmware-workstation.desktop'}, {'name': 'Google Chrome', 'id': 'google-chrome.desktop'}, {'name': 'Audacious', 'id': 'audacious.desktop'}, {'name': 'To Do', 'id': 'chrome-nlliaccamikgfncmkebcmomodchimcbo-Default.desktop'}, {'name': 'GoldenDict-ng', 'id': 'io.github.xiaoyifang.goldendict_ng.desktop'}, {'name': 'ArcMenu Settings', 'icon': 'ArcMenu_ArcMenuIcon', 'id': 'gnome-extensions prefs arcmenu@arcmenu.com'}, {'name': 'Extension Manager', 'id': 'com.mattjakeman.ExtensionManager.desktop'}, {'name': 'Tweaks', 'id': 'org.gnome.tweaks.desktop'}, {'name': 'Document Scanner', 'id': 'simple-scan.desktop'}, {'name': 'Drawing', 'id': 'com.github.maoschanz.drawing.desktop'}, {'name': 'Document Viewer', 'id': 'org.gnome.Evince.desktop'}, {'name': 'Backups', 'id': 'org.gnome.DejaDup.desktop'}, {'name': 'Btrfs Assistant', 'id': 'btrfs-assistant.desktop'}, {'id': 'media-downloader.desktop'}, {'id': 'losslesscut.desktop'}, {'id': 'tartube.desktop'}]
 prefs-visible-page=0
-recently-installed-apps=['masterpdfeditor4.desktop', 'display-im6.q16hdri.desktop', 'appimagelaunchersettings.desktop', 'appimagekit_b736db762a6e66788bf529184f1061d1-LosslessCut.desktop', 'snap-store_ubuntu-software.desktop']
+recently-installed-apps=['masterpdfeditor4.desktop', 'display-im6.q16hdri.desktop', 'appimagelaunchersettings.desktop', 'appimagekit_b736db762a6e66788bf529184f1061d1-LosslessCut.desktop', 'snap-store_ubuntu-software.desktop', 'mplayer.desktop']
 search-entry-border-radius=(true, 25)
 show-activities-button=true
 
@@ -549,7 +562,7 @@ isolate-monitors=false
 isolate-workspaces=true
 leftbox-padding=-1
 panel-anchors='{"0":"MIDDLE","1":"MIDDLE"}'
-panel-element-positions='{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
+panel-element-positions='{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":false,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":false,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
 panel-lengths='{"0":100,"1":100}'
 panel-sizes='{"0":32,"1":32}'
 primary-monitor=1
@@ -626,9 +639,9 @@ locations=@av []
 document-type='text'
 
 [org/gnome/software]
-check-timestamp=int64 1714880813
+check-timestamp=int64 1714964876
 first-run=false
-flatpak-purge-timestamp=int64 1714887953
+flatpak-purge-timestamp=int64 1714954016
 
 [org/gnome/system/location]
 enabled=true
@@ -669,8 +682,8 @@ sort-column='name'
 sort-directories-first=true
 sort-order='descending'
 type-format='category'
-window-position=(2278, 153)
-window-size=(1203, 694)
+window-position=(26, 23)
+window-size=(650, 450)
 
 [org/x/sticky]
 active-group='Group 1'
