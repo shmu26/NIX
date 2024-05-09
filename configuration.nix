@@ -8,6 +8,16 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+(import 
+        (
+          (fetchTarball { url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz"; }) + "/module.nix"
+        ) 
+        { 
+          lix = fetchTarball { url = "https://git.lix.systems/lix-project/lix/archive/2.90-beta.1.tar.gz"; }; 
+        }
+      )
+
     ];
 
 
