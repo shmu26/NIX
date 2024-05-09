@@ -1,8 +1,8 @@
 # Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -10,73 +10,79 @@
       ./hardware-configuration.nix
     ];
 
-# Sane Scanner
-     hardware.sane.enable = true; 
-     hardware.sane.disabledDefaultBackends = [ ".*" ];
-
-
-  # Use the systemd-boot EFI boot loader.
+  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  #newest kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  # networking.hostName = "nixos"; # Define your hostname.
-  # Pick only one of the below networking options.
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  # Set your time zone.
-   time.timeZone = "Asia/Jerusalem";
-
-  #local time
-  time.hardwareClockInLocalTime = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+  # Enable networking
+  networking.networkmanager.enable = true;
+
+  # Sane Scanner
+     hardware.sane.enable = true;
+     hardware.sane.disabledDefaultBackends = [ ".*" ];
+
+     #newest kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  #swap
+    zramSwap.enable = true;
+
+
+  # Set your time zone.
+  time.timeZone = "Asia/Jerusalem";
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
+    LC_ADDRESS = "eo";
+    LC_IDENTIFICATION = "eo";
+    LC_MEASUREMENT = "eo";
+    LC_MONETARY = "eo";
+    LC_NAME = "eo";
+    LC_NUMERIC = "eo";
+    LC_PAPER = "eo";
+    LC_TELEPHONE = "eo";
+    LC_TIME = "eo";
   };
-
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-
-# Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  # Enable the KDE Plasma Desktop Environment.
+  services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-  
+
+   environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+  plasma-browser-integration
+  oxygen
+];
+
 
   # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
+  services.xserver = {
+    layout = "us";
+    xkbVariant = "";
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-#Brother printer
+  #Brother printer
   services.printing.drivers = [
     pkgs.brlaser
     pkgs.brgenml1lpr
     pkgs.brgenml1cupswrapper
 ];
 
- # Enable sound with pipewire.
+  # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -96,7 +102,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-#NTFS
+  #NTFS
   boot.supportedFilesystems = [ "ntfs" ];
 
 #Automount
@@ -111,129 +117,115 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
     options = ["nofail"];
 };
 
+fileSystems."/run/media/shmuel/rootMX23" = {
+    device = "/dev/disk/by-uuid/a0011f34-7dd9-401b-b1ce-dbff8afc9275";
+    options = ["nofail"];
+};
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.shmuel = {
+  users.users.shmuel = {
     isNormalUser = true;
     description = "shmuel";
-    extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
-    #  thunderbird
-    ];
+
+          ];
   };
 
-#swap
-    zramSwap.enable = true;
+  # Install firefox.
+  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-#Shell
+  #Shell
   users.users.shmuel.shell = pkgs.zsh;
+
+  virtualisation.vmware.host.enable = true;
+  virtualisation.vmware.host.package = (pkgs.vmware-workstation.overrideAttrs rec {
+src = ./vmware.bundle;
+  unpackPhase = let
+    vmware-unpack-env = pkgs.buildFHSEnv rec {
+      name = "vmware-unpack-env";
+      targetPkgs = pkgs: [ pkgs.zlib ];
+    };
+  in ''
+    ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh ${src} --extract unpacked"
+    # If you need it, copy the enableMacOSGuests stuff here as well.
+  '';
+});
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-   environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #   wget
-     pkgs.xfce.mousepad
-     pkgs.deja-dup
-     pkgs. duplicity
-     pkgs.ntfs3g
-     pkgs.caffeine-ng
-     pkgs.google-chrome
-     pkgs.audacious
-     pkgs.timeshift
-     pkgs.gparted
-     pkgs.conky
-     pkgs.goldendict-ng
-     pkgs.losslesscut-bin
-     pkgs.vlc
-     pkgs.smplayer
-     pkgs.libreoffice
-     pkgs.handbrake
-     pkgs.media-downloader
-     pkgs.inxi
-     pkgs.simple-scan
-     pkgs.git
-     pkgs.gh
-     pkgs.vim
-     pkgs.wget
-     pkgs.curl
-     pkgs.galculator
-     pkgs.oh-my-zsh
-     pkgs.neofetch
-     pkgs.lolcat
-     pkgs.zsh-autosuggestions
-     pkgs.zoom-us
-     pkgs.libressl
-     pkgs.hebcal
-     pkgs.kio-admin
-     pkgs.zram-generator
-     pkgs.konsave
-     pkgs.galculator
-     pkgs.fh
-     pkgs.filelight
-     pkgs.parted
-     pkgs.git-credential-manager
-     pkgs.papirus-icon-theme
-     pkgs.drawing
-     pkgs.qogir-icon-theme
-     pkgs.exfat
-     pkgs.exfatprogs 
-     pkgs.btrfs-progs
-     pkgs.btrfs-assistant
-     pkgs.anydesk
-     pkgs.btrbk     
-     pkgs.linuxKernel.packages.linux_6_8.vmware
-     pkgs.vmware-workstation
-     pkgs.vmfs-tools
-     pkgs.ovftool     
-     pkgs.tartube-yt-dlp     
-     pkgs.ffmpeg_5-full
-     pkgs.mplayer
-     pkgs.kdePackages.kate
-     
-     #pkgs
-  ];
-  
-  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
-  plasma-browser-integration
-  oxygen
-];
-  
-services.btrbk.instances."btrbk" = {
-    onCalendar = "*:0";
-    settings = {
-      snapshot_preserve_min = "7d";
-      volume."/" = {
-        subvolume = {
-          "/home" = {};
-          "/var" = {};
-          "/" = {};
-          };
-        snapshot_dir = ".snapshots";
-       };
+  environment.systemPackages = with pkgs; [
+
+  (pkgs.vmware-workstation.overrideAttrs rec {
+  src = ./vmware.bundle;
+  unpackPhase = let
+    vmware-unpack-env = pkgs.buildFHSEnv rec {
+      name = "vmware-unpack-env";
+      targetPkgs = pkgs: [ zlib ];
     };
-  };
+  in ''
+    ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh ${src} --extract unpacked"
+    # If you need it, copy the enableMacOSGuests stuff here as well.
+  '';
+})
 
- # virtualisation.virtualbox.host.enable = true;
- #  virtualisation.virtualbox.host.enableExtensionPack = true;
-  virtualisation.vmware.host.enable = true;
-  
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  vim
+  wget
+  google-chrome
+  kate
+  xfce.mousepad
+  deja-dup
+  duplicity
+  ntfs3g
+  caffeine-ng
+  audacious
+  timeshift
+  gparted
+  conky
+  goldendict-ng
+  losslesscut-bin
+  vlc
+  smplayer
+  libreoffice
+  handbrake
+  media-downloader
+  inxi
+  simple-scan
+  git
+  gh
+  curl
+  galculator
+  oh-my-zsh
+  neofetch
+  lolcat
+  zsh-autosuggestions
+  zoom-us
+  libressl
+  hebcal
+  zram-generator
+  galculator
+  fh
+  filelight
+  parted
+  git-credential-manager
+  exfat
+  anydesk
+  tartube-yt-dlp
+  ffmpeg_5-full
+  mplayer
+  linuxKernel.packages.linux_6_8.vmware
 
-programs.zsh = {
+  #pkgs
+   ];
+
+   programs.zsh = {
    enable = true;
    autosuggestions.enable = true;
    shellInit = "neofetch|lolcat";
-   
+
    shellAliases = {
     ll = "ls -l";
     fax = "brpcfax -o fax-number=025389272 /home/shmuel/Downloads/Fax/*";
@@ -254,7 +246,8 @@ programs.zsh.ohMyZsh = {
 system.userActivationScripts.zshrc = "touch .zshrc";
 
 
-  # Some programs need SUID wrappers, can be configured further or are
+
+    # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
@@ -266,9 +259,8 @@ system.userActivationScripts.zshrc = "touch .zshrc";
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-      services.flatpak.enable = true;
-      services.avahi.enable = true;
-      services.btrfs.autoScrub.enable = true;
+    services.flatpak.enable = true;
+    services.avahi.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -276,38 +268,15 @@ system.userActivationScripts.zshrc = "touch .zshrc";
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
-
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.05"; # Did you read the comment?
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "23.11"; # Did you read the comment?
 
 }
-
-# Set channel by running this command:
-# sudo nix-channel --add https://channels.nixos.org/nixos-unstable
-# sudo nix-channel --update
-# sudo nixos-rebuild switch --upgrade
-
-# BTRFS subvolumes are defined in hardware-configuration.nix
 
 # Configure printer:
 # ipp://192.168.150.170:631
