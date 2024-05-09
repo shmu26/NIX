@@ -207,7 +207,7 @@ src = ./vmware.bundle;
   ffmpeg_5-full
   mplayer
   linuxKernel.packages.linux_6_8.vmware
-
+  
   #pkgs
    ];
 
