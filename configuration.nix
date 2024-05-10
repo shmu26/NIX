@@ -142,10 +142,7 @@ fileSystems."/run/media/shmuel/rootMX23" = {
           ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Allow unfree packages
+   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   #Shell
@@ -228,7 +225,9 @@ src = ./vmware.bundle;
   mplayer
   linuxKernel.packages.linux_6_8.vmware
   element-desktop
-  #pkgs
+  firefox 
+
+ #pkgs
    ];
 
    programs.zsh = {
