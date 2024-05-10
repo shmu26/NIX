@@ -226,6 +226,7 @@ src = ./vmware.bundle;
   linuxKernel.packages.linux_6_8.vmware
   element-desktop
   firefox 
+  pciutils
 
  #pkgs
    ];
