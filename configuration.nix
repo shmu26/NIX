@@ -208,6 +208,7 @@ src = ./vmware.bundle;
   element-desktop
   firefox 
   pciutils
+  unixtools.top
 
  #pkgs
    ];
@@ -236,8 +237,7 @@ programs.zsh.ohMyZsh = {
 # Prevent the new user dialog in zsh
 system.userActivationScripts.zshrc = "touch .zshrc";
 
-
-
+ 
     # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
