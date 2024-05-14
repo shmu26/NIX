@@ -237,8 +237,7 @@ programs.zsh.ohMyZsh = {
 # Prevent the new user dialog in zsh
 system.userActivationScripts.zshrc = "touch .zshrc";
 
- 
-    # Some programs need SUID wrappers, can be configured further or are
+     # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
