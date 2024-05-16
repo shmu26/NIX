@@ -208,7 +208,7 @@ src = ./vmware.bundle;
   tartube-yt-dlp
   ffmpeg_5-full
   mplayer
-  linuxKernel.packages.linux_6_8.vmware
+  linuxKernel.packages.linux_6_6.vmware
   element-desktop
   firefox
   pciutils
