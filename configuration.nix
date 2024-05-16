@@ -118,7 +118,7 @@ fileSystems."/run/media/shmuel/rootMX23" = {
   users.users.shmuel = {
     isNormalUser = true;
     description = "shmuel";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
 
           ];
@@ -210,7 +210,7 @@ src = ./vmware.bundle;
   firefox
   pciutils
   unixtools.top
-   
+
  #pkgs
    ];
 
