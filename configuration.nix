@@ -29,7 +29,7 @@
      hardware.sane.disabledDefaultBackends = [ ".*" ];
 
      #newest kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   #swap
     zramSwap.enable = true;
@@ -40,6 +40,9 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+
+#local time
+services.localtimed.enable = true;
 
 
 
