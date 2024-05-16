@@ -30,6 +30,7 @@
 
      #newest kernel
   # boot.kernelPackages = pkgs.linuxPackages_latest;
+    boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
  
   #swap
     zramSwap.enable = true;
