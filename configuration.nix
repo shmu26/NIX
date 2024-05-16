@@ -130,36 +130,36 @@ fileSystems."/run/media/shmuel/rootMX23" = {
   #Shell
   users.users.shmuel.shell = pkgs.zsh;
 
-  virtualisation.vmware.host.enable = true;
-  virtualisation.vmware.host.package = (pkgs.vmware-workstation.overrideAttrs rec {
-src = ./vmware.bundle;
-  unpackPhase = let
-    vmware-unpack-env = pkgs.buildFHSEnv rec {
-      name = "vmware-unpack-env";
-      targetPkgs = pkgs: [ pkgs.zlib ];
-    };
-  in ''
-    ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh ${src} --extract unpacked"
-    # If you need it, copy the enableMacOSGuests stuff here as well.
-  '';
-});
+ # virtualisation.vmware.host.enable = true;
+  #virtualisation.vmware.host.package = (pkgs.vmware-workstation.overrideAttrs rec {
+#src = ./vmware.bundle;
+ # unpackPhase = let
+  #  vmware-unpack-env = pkgs.buildFHSEnv rec {
+   #   name = "vmware-unpack-env";
+    #  targetPkgs = pkgs: [ pkgs.zlib ];
+    #};
+  #in ''
+   # ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh ${src} --extract unpacked"
+   # # If you need it, copy the enableMacOSGuests stuff here as well.
+  #'';
+#});
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
 
-  (pkgs.vmware-workstation.overrideAttrs rec {
-  src = ./vmware.bundle;
-  unpackPhase = let
-    vmware-unpack-env = pkgs.buildFHSEnv rec {
-      name = "vmware-unpack-env";
-      targetPkgs = pkgs: [ zlib ];
-    };
-  in ''
-    ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh ${src} --extract unpacked"
-    # If you need it, copy the enableMacOSGuests stuff here as well.
-  '';
-})
+ # (pkgs.vmware-workstation.overrideAttrs rec {
+  #src = ./vmware.bundle;
+  #unpackPhase = let
+   # vmware-unpack-env = pkgs.buildFHSEnv rec {
+    #  name = "vmware-unpack-env";
+     # targetPkgs = pkgs: [ zlib ];
+   # };
+  #in ''
+   # ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh ${src} --extract unpacked"
+    ## If you need it, copy the enableMacOSGuests stuff here as well.
+ # '';
+#})
 
   vim
   wget
