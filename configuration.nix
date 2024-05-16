@@ -212,6 +212,8 @@ src = ./vmware.bundle;
   pciutils
   unixtools.top
   gnome.gnome-boxes
+  swtpm
+  OVMFFull
 
  #pkgs
    ];
