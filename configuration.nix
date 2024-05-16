@@ -41,16 +41,16 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  
+
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.;
-  services.displayManager.sddm.enable = true; 
+  services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-   
+
 
    environment.plasma5.excludePackages = with pkgs.libsForQt5; [
   plasma-browser-integration
@@ -130,36 +130,36 @@ fileSystems."/run/media/shmuel/rootMX23" = {
   #Shell
   users.users.shmuel.shell = pkgs.zsh;
 
- # virtualisation.vmware.host.enable = true;
-  #virtualisation.vmware.host.package = (pkgs.vmware-workstation.overrideAttrs rec {
-#src = ./vmware.bundle;
- # unpackPhase = let
-  #  vmware-unpack-env = pkgs.buildFHSEnv rec {
-   #   name = "vmware-unpack-env";
-    #  targetPkgs = pkgs: [ pkgs.zlib ];
-    #};
-  #in ''
-   # ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh ${src} --extract unpacked"
-   # # If you need it, copy the enableMacOSGuests stuff here as well.
-  #'';
-#});
+  virtualisation.vmware.host.enable = true;
+  virtualisation.vmware.host.package = (pkgs.vmware-workstation.overrideAttrs rec {
+src = ./vmware.bundle;
+  unpackPhase = let
+    vmware-unpack-env = pkgs.buildFHSEnv rec {
+      name = "vmware-unpack-env";
+      targetPkgs = pkgs: [ pkgs.zlib ];
+    };
+  in ''
+    ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh ${src} --extract unpacked"
+    # If you need it, copy the enableMacOSGuests stuff here as well.
+  '';
+});
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
 
- # (pkgs.vmware-workstation.overrideAttrs rec {
-  #src = ./vmware.bundle;
-  #unpackPhase = let
-   # vmware-unpack-env = pkgs.buildFHSEnv rec {
-    #  name = "vmware-unpack-env";
-     # targetPkgs = pkgs: [ zlib ];
-   # };
-  #in ''
-   # ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh ${src} --extract unpacked"
-    ## If you need it, copy the enableMacOSGuests stuff here as well.
- # '';
-#})
+  (pkgs.vmware-workstation.overrideAttrs rec {
+  src = ./vmware.bundle;
+  unpackPhase = let
+    vmware-unpack-env = pkgs.buildFHSEnv rec {
+      name = "vmware-unpack-env";
+      targetPkgs = pkgs: [ zlib ];
+    };
+  in ''
+    ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh ${src} --extract unpacked"
+    # If you need it, copy the enableMacOSGuests stuff here as well.
+  '';
+})
 
   vim
   wget
@@ -207,7 +207,7 @@ fileSystems."/run/media/shmuel/rootMX23" = {
   mplayer
   linuxKernel.packages.linux_6_8.vmware
   element-desktop
-  firefox 
+  firefox
   pciutils
   unixtools.top
    
