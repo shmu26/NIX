@@ -130,7 +130,6 @@ fileSystems."/run/media/shmuel/rootMX23" = {
   #Shell
   users.users.shmuel.shell = pkgs.zsh;
 
-  virtualisation.libvirtd.enable = true;
   virtualisation.vmware.host.enable = true;
   virtualisation.vmware.host.package = (pkgs.vmware-workstation.overrideAttrs rec {
 src = ./vmware.bundle;
@@ -211,10 +210,7 @@ src = ./vmware.bundle;
   firefox 
   pciutils
   unixtools.top
-  gnome.gnome-boxes
-  swtpm
-  OVMFFull
-
+   
  #pkgs
    ];
 
