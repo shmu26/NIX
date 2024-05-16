@@ -30,7 +30,7 @@
 
      #newest kernel
   # boot.kernelPackages = pkgs.linuxPackages_latest;
-
+ 
   #swap
     zramSwap.enable = true;
 
@@ -213,6 +213,8 @@ src = ./vmware.bundle;
   firefox
   pciutils
   unixtools.top
+  linuxKernel.packages.linux_zen.vmware
+  linuxKernel.kernels.linux_zen
 
  #pkgs
    ];
