@@ -215,7 +215,7 @@ src = ./vmware.bundle;
   pciutils
   unixtools.top
   linuxKernel.packages.linux_zen.vmware
-  linuxKernel.kernels.linux_zen
+ 
 
  #pkgs
    ];
