@@ -122,7 +122,7 @@ fileSystems."/run/media/shmuel/Fedora" = {
   users.users.shmuel = {
     isNormalUser = true;
     description = "shmuel";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
 
           ];
@@ -143,7 +143,6 @@ fileSystems."/run/media/shmuel/Fedora" = {
     swtpm.enable = true;
      };
   };
-
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -196,6 +195,7 @@ fileSystems."/run/media/shmuel/Fedora" = {
   firefox
   pciutils
   unixtools.top
+  gnome.gnome-boxes
 
  #pkgs
    ];

@@ -196,6 +196,10 @@ fileSystems."/run/media/shmuel/Fedora" = {
   pciutils
   unixtools.top
   gnome.gnome-boxes
+  win-spice
+  spice-protocol
+  spice-gtk
+  spice 
 
  #pkgs
    ];
