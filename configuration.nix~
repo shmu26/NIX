@@ -114,8 +114,8 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
     options = ["nofail"];
 };
 
-fileSystems."/run/media/shmuel/rootMX23" = {
-    device = "/dev/disk/by-uuid/a0011f34-7dd9-401b-b1ce-dbff8afc9275";
+fileSystems."/run/media/shmuel/Fedora" = {
+    device = "/dev/disk/by-uuid/e3c34c3f-9ab7-4173-9c43-8458c2be1b32";
     options = ["nofail"];
 };
 
