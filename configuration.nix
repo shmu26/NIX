@@ -200,6 +200,7 @@ fileSystems."/run/media/shmuel/Fedora" = {
   spice-protocol
   spice-gtk
   spice 
+  virtio-win
 
  #pkgs
    ];
