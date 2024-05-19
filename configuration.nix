@@ -135,6 +135,15 @@ fileSystems."/run/media/shmuel/Fedora" = {
   users.users.shmuel.shell = pkgs.zsh;
 
   #Virtualisation
+   virtualisation.libvirtd = {
+  enable = true;
+  qemu = {
+    package = pkgs.qemu_kvm;
+    runAsRoot = true;
+    swtpm.enable = true;
+     };
+  };
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
