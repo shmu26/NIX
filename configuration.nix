@@ -226,6 +226,12 @@ virtualisation.libvirtd = {
   unixtools.top
   linuxKernel.packages.linux_zen.vmware
   efibootmgr
+  win-spice
+  spice-protocol
+  spice-gtk
+  spice 
+  virtio-win
+  gnome.gnome-boxes
 
  #pkgs
    ];
