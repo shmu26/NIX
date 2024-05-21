@@ -216,7 +216,7 @@ src = ./vmware.bundle;
   pciutils
   unixtools.top
   linuxKernel.packages.linux_zen.vmware
- 
+  efibootmgr
 
  #pkgs
    ];
