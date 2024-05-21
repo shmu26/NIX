@@ -29,8 +29,9 @@
      hardware.sane.disabledDefaultBackends = [ ".*" ];
 
      #newest kernel
-    boot.kernelPackages = pkgs.linuxPackages_latest;
-    
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
+    boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+ 
   #swap
     zramSwap.enable = true;
 
@@ -113,8 +114,8 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
     options = ["nofail"];
 };
 
-fileSystems."/run/media/shmuel/Fedora" = {
-    device = "/dev/disk/by-uuid/e3c34c3f-9ab7-4173-9c43-8458c2be1b32";
+fileSystems."/run/media/shmuel/rootMX23" = {
+    device = "/dev/disk/by-uuid/a0011f34-7dd9-401b-b1ce-dbff8afc9275";
     options = ["nofail"];
 };
 
@@ -122,7 +123,7 @@ fileSystems."/run/media/shmuel/Fedora" = {
   users.users.shmuel = {
     isNormalUser = true;
     description = "shmuel";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
 
           ];
@@ -134,19 +135,37 @@ fileSystems."/run/media/shmuel/Fedora" = {
   #Shell
   users.users.shmuel.shell = pkgs.zsh;
 
-  #Virtualisation
-   virtualisation.libvirtd = {
-  enable = true;
-  qemu = {
-    package = pkgs.qemu_kvm;
-    runAsRoot = true;
-    swtpm.enable = true;
-     };
-  };
+  virtualisation.vmware.host.enable = true;
+  virtualisation.vmware.host.package = (pkgs.vmware-workstation.overrideAttrs rec {
+src = ./vmware.bundle;
+  unpackPhase = let
+    vmware-unpack-env = pkgs.buildFHSEnv rec {
+      name = "vmware-unpack-env";
+      targetPkgs = pkgs: [ pkgs.zlib ];
+    };
+  in ''
+    ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh ${src} --extract unpacked"
+    # If you need it, copy the enableMacOSGuests stuff here as well.
+  '';
+});
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+
+  (pkgs.vmware-workstation.overrideAttrs rec {
+  src = ./vmware.bundle;
+  unpackPhase = let
+    vmware-unpack-env = pkgs.buildFHSEnv rec {
+      name = "vmware-unpack-env";
+      targetPkgs = pkgs: [ zlib ];
+    };
+  in ''
+    ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh ${src} --extract unpacked"
+    # If you need it, copy the enableMacOSGuests stuff here as well.
+  '';
+})
+
   vim
   wget
   google-chrome
@@ -191,15 +210,13 @@ fileSystems."/run/media/shmuel/Fedora" = {
   tartube-yt-dlp
   ffmpeg_5-full
   mplayer
+ # linuxKernel.packages.linux_6_6.vmware
   element-desktop
   firefox
   pciutils
   unixtools.top
-  gnome.gnome-boxes
-  win-spice
-  spice-protocol
-  spice-gtk
-  spice 
+  linuxKernel.packages.linux_zen.vmware
+ 
 
  #pkgs
    ];
