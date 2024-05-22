@@ -215,7 +215,8 @@ virtualisation.libvirtd = {
   parted
   git-credential-manager
   exfat
-  anydesk
+  exfatprogs 
+ anydesk
   tartube-yt-dlp
   ffmpeg_5-full
   mplayer
