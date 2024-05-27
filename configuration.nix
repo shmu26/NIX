@@ -25,10 +25,34 @@
   networking.networkmanager.enable = true;
 
  
-   virtualisation.virtualbox.host.enable = true;
-   users.extraGroups.vboxusers.members = [ "shmuel" ];
+  # virtualisation.virtualbox.host.enable = true;
+  # users.extraGroups.vboxusers.members = [ "shmuel" ];
+    virtualisation.vmware.host.enable = true;
+  virtualisation.vmware.host.package = (pkgs.vmware-workstation.overrideAttrs rec {
+src = ./vmware.bundle;
+  unpackPhase = let
+    vmware-unpack-env = pkgs.buildFHSEnv rec {
+      name = "vmware-unpack-env";
+      targetPkgs = pkgs: [ pkgs.zlib ];
+    };
+  in ''
+    ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh ${src} --extract unpacked"
+    # If you need it, copy the enableMacOSGuests stuff here as well.
+  '';
+});
 
+  #virtualisation.libvirtd = {
+  #enable = true;
+  #qemu = {
+  #  package = pkgs.qemu_kvm;
+  #  runAsRoot = true;
+  #  swtpm.enable = true;
+  #   };
+  # };
 
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  
   # Sane Scanner
      hardware.sane.enable = true;
      hardware.sane.disabledDefaultBackends = [ ".*" ];
@@ -146,6 +170,20 @@ fileSystems."/run/media/shmuel/rootMX23" = {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+
+  (pkgs.vmware-workstation.overrideAttrs rec {
+  src = ./vmware.bundle;
+  unpackPhase = let
+    vmware-unpack-env = pkgs.buildFHSEnv rec {
+      name = "vmware-unpack-env";
+      targetPkgs = pkgs: [ zlib ];
+    };
+  in ''
+    ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh ${src} --extract unpacked"
+    # If you need it, copy the enableMacOSGuests stuff here as well.
+  '';
+})
+
   vim
   wget
   google-chrome
@@ -194,7 +232,7 @@ fileSystems."/run/media/shmuel/rootMX23" = {
   firefox
   pciutils
   unixtools.top
-  linuxKernel.packages.linux_6_8.virtualbox
+  linuxKernel.packages.linux_6_8.vmware
 
  #pkgs
    ];
