@@ -25,9 +25,7 @@
   networking.networkmanager.enable = true;
 
  
-  # virtualisation.virtualbox.host.enable = true;
-  # users.extraGroups.vboxusers.members = [ "shmuel" ];
-    virtualisation.vmware.host.enable = true;
+  virtualisation.vmware.host.enable = true;
   virtualisation.vmware.host.package = (pkgs.vmware-workstation.overrideAttrs rec {
 src = ./vmware.bundle;
   unpackPhase = let
@@ -41,17 +39,7 @@ src = ./vmware.bundle;
   '';
 });
 
-  #virtualisation.libvirtd = {
-  #enable = true;
-  #qemu = {
-  #  package = pkgs.qemu_kvm;
-  #  runAsRoot = true;
-  #  swtpm.enable = true;
-  #   };
-  # };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+   
   
   # Sane Scanner
      hardware.sane.enable = true;
