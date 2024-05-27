@@ -232,6 +232,7 @@ fileSystems."/run/media/shmuel/rootMX23" = {
   firefox
   pciutils
   unixtools.top
+  smartmontools
   linuxKernel.packages.linux_6_8.vmware
 
  #pkgs

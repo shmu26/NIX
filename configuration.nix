@@ -180,7 +180,6 @@ fileSystems."/run/media/shmuel/rootMX23" = {
     };
   in ''
     ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh ${src} --extract unpacked"
-    # If you need it, copy the enableMacOSGuests stuff here as well.
   '';
 })
 
