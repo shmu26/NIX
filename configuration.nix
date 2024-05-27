@@ -33,10 +33,12 @@
      hardware.sane.enable = true;
      hardware.sane.disabledDefaultBackends = [ ".*" ];
 
-     #newest kernel
-  #  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+     #KERNEL
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
   # boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
- 
+    boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_8;   
+
   #swap
     zramSwap.enable = true;
 
@@ -192,7 +194,7 @@ fileSystems."/run/media/shmuel/rootMX23" = {
   firefox
   pciutils
   unixtools.top
- # linuxKernel.packages.linux_6_9.virtualbox
+  linuxKernel.packages.linux_6_8.virtualbox
 
  #pkgs
    ];
