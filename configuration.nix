@@ -28,7 +28,7 @@
      hardware.sane.enable = true;
      hardware.sane.disabledDefaultBackends = [ ".*" ];
 
-     #newest kernel
+     #Kernel
   # boot.kernelPackages = pkgs.linuxPackages_latest; 
   #  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
     boot.kernelPackages = pkgs.linuxPackages_6_8;
