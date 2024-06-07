@@ -31,7 +31,8 @@
      #newest kernel
   # boot.kernelPackages = pkgs.linuxPackages_latest; 
   #  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
- 
+    boot.kernelPackages = pkgs.linuxPackages_6_8;
+
    # Virtualisation
      virtualisation.virtualbox.host.enable = true;
      users.extraGroups.vboxusers.members = [ "shmuel" ];
@@ -192,8 +193,7 @@ fileSystems."/run/media/shmuel/rootMX23" = {
   firefox
   pciutils
   unixtools.top
-  #linuxKernel.packages.linux_zen.virtualbox
-
+  linuxKernel.packages.linux_6_8.virtualbox
  #pkgs
    ];
 
