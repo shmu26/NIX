@@ -30,6 +30,7 @@
 
      #Kernel
    boot.kernelPackages = pkgs.linuxPackages_6_8;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
    # Virtualisation
    virtualisation.vmware.host.enable = true; 
