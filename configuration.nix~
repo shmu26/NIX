@@ -29,8 +29,8 @@
      hardware.sane.disabledDefaultBackends = [ ".*" ];
 
      #Kernel
-  # boot.kernelPackages = pkgs.linuxPackages_6_8;
-   boot.kernelPackages = pkgs.linuxPackages_latest;
+   boot.kernelPackages = pkgs.linuxPackages_6_8;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
    # Virtualisation
    virtualisation.vmware.host.enable = true; 
@@ -190,7 +190,7 @@ fileSystems."/run/media/shmuel/rootMX23" = {
   firefox
   pciutils
   unixtools.top
-  linuxKernel.packages.linux_6_9.vmware
+  linuxKernel.packages.linux_6_8.vmware
   
  #pkgs
    ];
