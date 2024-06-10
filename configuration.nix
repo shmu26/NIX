@@ -117,10 +117,6 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
     options = ["nofail"];
 };
 
-fileSystems."/run/media/shmuel/rootMX23" = {
-    device = "/dev/disk/by-uuid/a0011f34-7dd9-401b-b1ce-dbff8afc9275";
-    options = ["nofail"];
-};
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shmuel = {
