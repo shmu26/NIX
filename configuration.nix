@@ -156,7 +156,6 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   vlc
   smplayer
   libreoffice
-  handbrake
   media-downloader
   inxi
   simple-scan
