@@ -200,7 +200,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
    shellInit = "neofetch|lolcat";
 
    shellAliases = {
-    bild = "cd /etc/nixos && sudo nixos-rebuild switch --flake .  && cp /etc/nixos/configuration.nix ~/Documents/config && cp /etc/nixos/flake.nix ~/Documents/config &&  cp /etc/nixos/hardware-configuration.nix ~/Documents/config && cp /etc/nixos/configuration.nix~ ~/Documents/config && cd ~/Documents/config && git add .  && git commit -m config && git push origin main";
+    bild = "cd /etc/nixos && sudo nixos-rebuild switch --flake .  && cp /etc/nixos/configuration.nix ~/Documents/config && cp /etc/nixos/flake.nix ~/Documents/config && cp /etc/nixos/flake.lock ~/Documents/config &&  cp /etc/nixos/hardware-configuration.nix ~/Documents/config && cp /etc/nixos/configuration.nix~ ~/Documents/config && cd ~/Documents/config && git add .  && git commit -m config && git push origin main";
     config = "sudo nano -m -q -l +c/#pkgs -B  /etc/nixos/configuration.nix";
     nan = "nano -m -q -l";
   };
