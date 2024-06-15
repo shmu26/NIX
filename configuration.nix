@@ -2,6 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
+
 { config, pkgs, ... }:
 
 {
@@ -9,6 +10,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
   ];
+
+  nix.settings.experimental-features = "nix-command flakes";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -200,7 +203,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
     ll = "ls -l";
     fax = "brpcfax -o fax-number=025389272 /home/shmuel/Downloads/Fax/*";
     del = "rm /home/shmuel/Downloads/Fax/*";
-    bild = "sudo nixos-rebuild switch && cp /etc/nixos/configuration.nix ~/Documents/config && cp /etc/nixos/hardware-configuration.nix ~/Documents/config && cp /etc/nixos/configuration.nix~ ~/Documents/config && cd ~/Documents/config && git add .  && git commit -m config && git push origin main";
+    bild = "cd /etc/nixos && sudo nixos-rebuild switch --flake .  && cp /etc/nixos/configuration.nix ~/Documents/config && cp /etc/nixos/flake.nix ~/Documents/config &&  cp /etc/nixos/hardware-configuration.nix ~/Documents/config && cp /etc/nixos/configuration.nix~ ~/Documents/config && cd ~/Documents/config && git add .  && git commit -m config && git push origin main";
     up = "sudo nix-channel --update && sudo nixos-rebuild switch && cd ~/Documents/config && git add configuration.nix && git commit -m config && git push origin main";
     config = "sudo nano -m -q -l +c/#pkgs -B  /etc/nixos/configuration.nix";
     nan = "nano -m -q -l";
