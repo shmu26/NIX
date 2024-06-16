@@ -189,7 +189,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   firefox
   pciutils
   unixtools.top
- # linuxKernel.packages.linux_6_8.vmware
+  # linuxKernel.packages.linux_6_9.vmware
   
  #pkgs
    ];
