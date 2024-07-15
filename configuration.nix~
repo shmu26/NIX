@@ -35,6 +35,8 @@
      boot.kernelPackages = pkgs.linuxPackages_latest;
 
    # Virtualisation
+     virtualisation.libvirtd.enable = true;
+     programs.virt-manager.enable = true;
    
 
   #swap

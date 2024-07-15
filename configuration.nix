@@ -190,7 +190,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   firefox
   pciutils
   unixtools.top
-    
+  virtiofsd   
  #pkgs
    ];
 
