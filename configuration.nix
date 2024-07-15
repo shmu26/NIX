@@ -35,6 +35,8 @@
      boot.kernelPackages = pkgs.linuxPackages_latest;
 
    # Virtualisation
+     virtualisation.libvirtd.enable = true;
+     programs.virt-manager.enable = true;
    
 
   #swap
@@ -192,6 +194,13 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
  #pkgs
    ];
 
+
+     nixpkgs.config.permittedInsecurePackages = [
+     "python3.11-youtube-dl-2021.12.17"
+     ];
+
+
+
    programs.zsh = {
    enable = true;
    autosuggestions.enable = true;
@@ -201,6 +210,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
     bild = "cd /etc/nixos && sudo nixos-rebuild switch --flake .  && cp /etc/nixos/configuration.nix ~/Documents/config && cp /etc/nixos/flake.nix ~/Documents/config && cp /etc/nixos/flake.lock ~/Documents/config &&  cp /etc/nixos/hardware-configuration.nix ~/Documents/config && cp /etc/nixos/configuration.nix~ ~/Documents/config && cd ~/Documents/config && git add .  && git commit -m config && git push origin main";
     config = "sudo nano -m -q -l +c/#pkgs -B  /etc/nixos/configuration.nix";
     nan = "nano -m -q -l";
+    up = "cd /etc/nixos/ && sudo nix flake update";
   };
 };
 programs.zsh.ohMyZsh = {
