@@ -32,11 +32,10 @@
      hardware.sane.disabledDefaultBackends = [ ".*" ];
 
      #Kernel
-  # boot.kernelPackages = pkgs.linuxPackages_6_8;
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
+     boot.kernelPackages = pkgs.linuxPackages_latest;
 
    # Virtualisation
-   virtualisation.vmware.host.enable = true; 
+   
 
   #swap
     zramSwap.enable = true;
@@ -189,8 +188,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   firefox
   pciutils
   unixtools.top
-  # linuxKernel.packages.linux_6_9.vmware
-  
+    
  #pkgs
    ];
 
