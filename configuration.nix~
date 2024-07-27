@@ -192,7 +192,8 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   unixtools.top
   virtiofsd
   kdePackages.sddm #added for unstable   
- #pkgs
+  kdePackages.kirigami 
+#pkgs
    ];
 
 
