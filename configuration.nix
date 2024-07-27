@@ -87,7 +87,7 @@ services.localtimed.enable = true;
 ];
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  #sound.enable = true; #disabled for unstable branch
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -195,9 +195,10 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
    ];
 
 
-     nixpkgs.config.permittedInsecurePackages = [
-     "python3.11-youtube-dl-2021.12.17"
-     ];
+ nixpkgs.config.permittedInsecurePackages = [
+                "python3.12-youtube-dl-2021.12.17"
+                "python3.11-youtube-dl-2021.12.17"
+              ];
 
 
 
