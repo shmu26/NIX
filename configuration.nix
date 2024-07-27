@@ -191,7 +191,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   pciutils
   unixtools.top
   virtiofsd
-  kdePackages.sddm #added for unstable   
+  libsForQt5.kirigami-addons #added for unstable   
   libsForQt5.kirigami2 
 #pkgs
    ];
