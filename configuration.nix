@@ -237,8 +237,8 @@ system.userActivationScripts.zshrc = "touch .zshrc";
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-    services.flatpak.enable = true;
+    services.openssh.enable = true;
+   # services.flatpak.enable = true;
     services.avahi.enable = true;
 
   # Open ports in the firewall.
