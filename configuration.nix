@@ -190,7 +190,8 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   firefox
   pciutils
   unixtools.top
-  virtiofsd   
+  virtiofsd
+  kdePackages.sddm #added for unstable   
  #pkgs
    ];
 
