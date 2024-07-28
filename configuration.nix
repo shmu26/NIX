@@ -256,8 +256,3 @@ system.userActivationScripts.zshrc = "touch .zshrc";
   system.stateVersion = "23.11"; # Did you read the comment?
 
 }
-
-# Configure printer:
-# ipp://192.168.150.170:631
-# Brother MFC-L2710DW series, using brlaser v6
-
