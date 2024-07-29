@@ -243,6 +243,7 @@ system.userActivationScripts.zshrc = "touch .zshrc";
     services.openssh.enable = true;
    # services.flatpak.enable = true;
     services.avahi.enable = true;
+    services.avahi.nssmdns = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
