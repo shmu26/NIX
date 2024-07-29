@@ -191,15 +191,14 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   pciutils
   unixtools.top
   virtiofsd
-  libsForQt5.kirigami-addons #added for unstable   
-  libsForQt5.kirigami2 #added for unstable 
-  kdePackages.ksvg #added for unstable
+  kdePackages.sddm-kcm
+  
 #pkgs
    ];
 
 
  nixpkgs.config.permittedInsecurePackages = [
-                "python3.12-youtube-dl-2021.12.17" #added for unstable
+                "python3.12-youtube-dl-2021.12.17" 
                 "python3.11-youtube-dl-2021.12.17"
               ];
 
