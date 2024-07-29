@@ -218,6 +218,8 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
     up = "cd /etc/nixos/ && sudo nix flake update";
     clean = "sudo nix-collect-garbage -d && sudo nix-store --gc && sudo nixos-rebuild boot";
     opt = "sudo nix-store --optimise";
+    fax = "brpcfax -o fax-number=025389272 /home/shmuel/Downloads/Fax/*";
+    del = "rm /home/shmuel/Downloads/Fax/*";
   };
 };
 programs.zsh.ohMyZsh = {
