@@ -194,6 +194,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   kdePackages.sddm-kcm
   dpkg  
   (callPackage ./brother-fax-driver.nix {})
+
 #pkgs
    ];
 
