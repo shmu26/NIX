@@ -192,7 +192,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   unixtools.top
   virtiofsd
   kdePackages.sddm-kcm
-  
+  dpkg  
 #pkgs
    ];
 

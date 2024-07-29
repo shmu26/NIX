@@ -214,6 +214,8 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
     config = "sudo nano -m -q -l +c/#pkgs -B  /etc/nixos/configuration.nix";
     nan = "nano -m -q -l";
     up = "cd /etc/nixos/ && sudo nix flake update";
+    clean = "sudo nix-collect-garbage -d && sudo nix-store --gc && sudo nixos-rebuild boot";
+    opt = "sudo nix-store --optimise";
   };
 };
 programs.zsh.ohMyZsh = {
