@@ -32,11 +32,11 @@
      hardware.sane.disabledDefaultBackends = [ ".*" ];
 
      #Kernel
-     boot.kernelPackages = pkgs.linuxPackages_latest;
+   #  boot.kernelPackages = pkgs.linuxPackages_latest;
 
    # Virtualisation
-     virtualisation.libvirtd.enable = true;
-     programs.virt-manager.enable = true;
+   #  virtualisation.libvirtd.enable = true;
+   #  programs.virt-manager.enable = true;
    
 
   #swap
@@ -184,7 +184,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   exfat
   anydesk
   tartube-yt-dlp
-  ffmpeg_5-full
+  ffmpeg_7-full
   mplayer
   element-desktop
   firefox
@@ -192,9 +192,8 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   unixtools.top
   virtiofsd
   kdePackages.sddm-kcm
-  dpkg  
-  (callPackage ./brother-fax-driver.nix {})
-
+  # guestfs-tools
+  vmware-workstation
 #pkgs
    ];
 
