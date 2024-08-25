@@ -37,7 +37,7 @@
    # Virtualisation
    #  virtualisation.libvirtd.enable = true;
    #  programs.virt-manager.enable = true;
-      virtualisation.vmware.host.enable = true;
+   #  virtualisation.vmware.host.enable = true;
    
 
   #swap
@@ -194,6 +194,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   virtiofsd
   kdePackages.sddm-kcm
   # guestfs-tools
+  # vmware installed by: sudo NIXPKGS_ALLOW_UNFREE=1 nix-env -iA nixos.vmware-workstation
    
 #pkgs
    ];
