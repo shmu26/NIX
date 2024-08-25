@@ -32,13 +32,13 @@
      hardware.sane.disabledDefaultBackends = [ ".*" ];
 
      #Kernel
-     boot.kernelPackages = pkgs.linuxPackages_latest;
+     # boot.kernelPackages = pkgs.linuxPackages_latest;
     
 
    # Virtualisation
    #  virtualisation.libvirtd.enable = true;
    #  programs.virt-manager.enable = true;
-    #  virtualisation.vmware.host.enable = true;
+      virtualisation.vmware.host.enable = true;
    
 
   #swap
@@ -194,7 +194,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   unixtools.top
   virtiofsd
   kdePackages.sddm-kcm
-  
+
   # guestfs-tools
   
      
