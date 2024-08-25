@@ -37,7 +37,7 @@
    # Virtualisation
    #  virtualisation.libvirtd.enable = true;
    #  programs.virt-manager.enable = true;
-   #   virtualisation.vmware.host.enable = true;
+      virtualisation.vmware.host.enable = true;
    
 
   #swap
@@ -194,7 +194,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   virtiofsd
   kdePackages.sddm-kcm
   # guestfs-tools
-  # vmware workstation was installed locally (without sudo) to nixenv on 24.05 channel: nix-env -iA nixos.vmware-workstation in 
+   
 #pkgs
    ];
 
