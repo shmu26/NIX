@@ -65,13 +65,13 @@ services.localtimed.enable = true;
   services.displayManager.sddm.wayland.enable = true;   
 
   #XFCE
-  services.xserver = {
-    enable = true;
-    desktopManager = {
-      xterm.enable = false;
-      xfce.enable = true; 
-    };
-  };
+  #services.xserver = {
+   # enable = true;
+    #desktopManager = {
+     # xterm.enable = false;
+      #xfce.enable = true; 
+   # };
+ # };
 
 
    environment.plasma5.excludePackages = with pkgs.libsForQt5; [
@@ -202,19 +202,19 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   unixtools.top
   virtiofsd
   kdePackages.sddm-kcm
-
-  xfce.xfce4-whiskermenu-plugin
-  xfce.xfce4-xkb-plugin
-  xfce.catfish
-  xfce.xfce4-clipman-plugin
-  xfce.xfce4-notes-plugin
-  xfce.xfce4-pulseaudio-plugin
-  papirus-icon-theme
+  
+  #pkgs
 
   # guestfs-tools
   
+  #xfce.xfce4-whiskermenu-plugin
+  #xfce.xfce4-xkb-plugin
+  #xfce.catfish
+  #xfce.xfce4-clipman-plugin
+  #xfce.xfce4-notes-plugin
+  #xfce.xfce4-pulseaudio-plugin
+  #papirus-icon-theme  
      
-#pkgs
    ];
 
 
