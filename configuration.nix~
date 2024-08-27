@@ -65,8 +65,7 @@ services.localtimed.enable = true;
   services.displayManager.sddm.wayland.enable = true;   
 
   #XFCE
- services.displayManager.defaultSession;
- services.xserver = {
+  services.xserver = {
     enable = true;
     desktopManager = {
       xterm.enable = false;
