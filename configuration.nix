@@ -9,7 +9,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-     ];
+  ];
 
   nix.settings.experimental-features = "nix-command flakes";
 
@@ -58,20 +58,12 @@ services.localtimed.enable = true;
 
 
   # Enable the X11 windowing system.
+  services.xserver.enable = true;
 
-  #KDE    
+  # Enable the KDE Plasma Desktop Environment.;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  services.displayManager.sddm.wayland.enable = true;   
-
-  #XFCE
-  #services.xserver = {
-   # enable = true;
-    #desktopManager = {
-     # xterm.enable = false;
-      #xfce.enable = true; 
-   # };
- # };
+  services.displayManager.sddm.wayland.enable = true;
 
 
    environment.plasma5.excludePackages = with pkgs.libsForQt5; [
@@ -202,19 +194,11 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   unixtools.top
   virtiofsd
   kdePackages.sddm-kcm
-  
-  #pkgs
 
   # guestfs-tools
   
-  #xfce.xfce4-whiskermenu-plugin
-  #xfce.xfce4-xkb-plugin
-  #xfce.catfish
-  #xfce.xfce4-clipman-plugin
-  #xfce.xfce4-notes-plugin
-  #xfce.xfce4-pulseaudio-plugin
-  #papirus-icon-theme  
      
+#pkgs
    ];
 
 
