@@ -208,6 +208,13 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   virtiofsd
   kdePackages.sddm-kcm
 
+  xfce.xfce4-whiskermenu-plugin
+  xfce.xfce4-xkb-plugin
+  xfce.xfwm4-themes
+  xfce.catfish
+  xfce.orage
+  papirus-icon-theme
+
   # guestfs-tools
   
      
