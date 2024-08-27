@@ -208,6 +208,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   xfce.xfwm4-themes
   xfce.catfish
   xfce.xfce4-clipman-plugin
+  xfce.xfce4-notes-plugin
   papirus-icon-theme
 
   # guestfs-tools

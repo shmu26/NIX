@@ -209,6 +209,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   xfce.catfish
   xfce.xfce4-clipman-plugin
   xfce.xfce4-notes-plugin
+  xfce.xfce4-pulseaudio-plugin
   papirus-icon-theme
 
   # guestfs-tools
