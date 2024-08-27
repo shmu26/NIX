@@ -66,6 +66,7 @@ services.localtimed.enable = true;
 
     plasma6.enable = true;   
     };
+
     displayManager.defaultSession = "xfce";
 
    displayManager.sddm.enable = true;
