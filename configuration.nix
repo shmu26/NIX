@@ -205,7 +205,6 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
 
   xfce.xfce4-whiskermenu-plugin
   xfce.xfce4-xkb-plugin
-  xfce.xfwm4-themes
   xfce.catfish
   xfce.xfce4-clipman-plugin
   xfce.xfce4-notes-plugin
