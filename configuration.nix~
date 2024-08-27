@@ -212,7 +212,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   xfce.xfce4-xkb-plugin
   xfce.xfwm4-themes
   xfce.catfish
-  xfce.orage
+  # xfce.orage
   papirus-icon-theme
 
   # guestfs-tools
