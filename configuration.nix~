@@ -58,19 +58,19 @@ services.localtimed.enable = true;
 
 
   # Enable the X11 windowing system.
-    services.xserver = {
+    
+    services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.wayland.enable = true;   
+
+ services.xserver = {
     enable = true;
     desktopManager = {
       xterm.enable = false;
-      xfce.enable = true;
-
-    plasma6.enable = true;   
+      xfce.enable = true; 
     };
 
     displayManager.defaultSession = "xfce";
-
-   displayManager.sddm.enable = true;
-   displayManager.sddm.wayland.enable = true;
   };
 
   # Enable the KDE Plasma Desktop Environment.;
@@ -212,7 +212,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   xfce.xfce4-xkb-plugin
   xfce.xfwm4-themes
   xfce.catfish
-  clipman
+  xfce.xfce4-clipman-plugin
   papirus-icon-theme
 
   # guestfs-tools

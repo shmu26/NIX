@@ -58,25 +58,22 @@ services.localtimed.enable = true;
 
 
   # Enable the X11 windowing system.
-    services.xserver = {
+
+  #KDE    
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.wayland.enable = true;   
+
+  #XFCE
+ services.xserver = {
     enable = true;
     desktopManager = {
       xterm.enable = false;
-      xfce.enable = true;
-
-    plasma6.enable = true;   
+      xfce.enable = true; 
     };
 
     displayManager.defaultSession = "xfce";
-
-   displayManager.sddm.enable = true;
-   displayManager.sddm.wayland.enable = true;
   };
-
-  # Enable the KDE Plasma Desktop Environment.;
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
 
 
    environment.plasma5.excludePackages = with pkgs.libsForQt5; [
