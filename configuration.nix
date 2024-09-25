@@ -32,7 +32,7 @@
      hardware.sane.disabledDefaultBackends = [ ".*" ];
 
      #Kernel
-     # boot.kernelPackages = pkgs.linuxPackages_latest;
+    #  boot.kernelPackages = pkgs.linuxPackages_latest;
     
 
    # Virtualisation
@@ -194,7 +194,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   unixtools.top
   virtiofsd
   kdePackages.sddm-kcm
-
+  
   # guestfs-tools
   
      
