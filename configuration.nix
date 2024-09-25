@@ -171,7 +171,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   curl
   galculator
   oh-my-zsh
-  neofetch
+  fastfetch
   lolcat
   zsh-autosuggestions
   zoom-us
