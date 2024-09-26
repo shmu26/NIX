@@ -38,7 +38,7 @@
    # Virtualisation
    #  virtualisation.libvirtd.enable = true;
    #  programs.virt-manager.enable = true;
-      virtualisation.vmware.host.enable = true;
+     # virtualisation.vmware.host.enable = true;
       virtualisation.virtualbox.host.enable = true;
       users.extraGroups.vboxusers.members = [ "shmuel" ];
       virtualisation.virtualbox.host.enableExtensionPack = true;
