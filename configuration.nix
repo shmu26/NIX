@@ -197,6 +197,7 @@ fileSystems."/run/media/shmuel/LinuxBackups" = {
   unixtools.top
   virtiofsd
   kdePackages.sddm-kcm
+  kdePackages.kdeconnect-kde
   
   # guestfs-tools
   
