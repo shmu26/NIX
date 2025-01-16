@@ -37,13 +37,14 @@
      # virtualisation.vmware.host.enable = true;
       virtualisation.virtualbox.host.enable = true;
       users.extraGroups.vboxusers.members = [ "shmuel" ];
-      virtualisation.virtualbox.host.enableExtensionPack = true;
+     # virtualisation.virtualbox.host.enableExtensionPack = true;
 
     #swap
     zramSwap.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Jerusalem";
+  time.hardwareClockInLocalTime = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
