@@ -130,7 +130,7 @@ fileSystems."/run/media/shmuel/Virt" = {
   users.users.shmuel = {
     isNormalUser = true;
     description = "shmuel";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" ];
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
@@ -215,8 +215,7 @@ fileSystems."/run/media/shmuel/Virt" = {
     up = "sudo nix-channel --update";
     clean = "sudo nix-collect-garbage -d && sudo nix-store --gc && sudo nixos-rebuild boot";
     opt = "sudo nix-store --optimise";
-    fax = "brpcfax -o fax-number=025389272 /home/shmuel/Downloads/Fax/*";
-    del = "rm /home/shmuel/Downloads/Fax/*";
+    
   };
 };
 programs.zsh.ohMyZsh = {
