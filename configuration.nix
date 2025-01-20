@@ -197,6 +197,7 @@ fileSystems."/run/media/shmuel/Virt" = {
   unixtools.top
   kdePackages.sddm-kcm
   kdePackages.kdeconnect-kde
+  davinci-resolve
 
 #pkgs
   ];
