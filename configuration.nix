@@ -198,6 +198,7 @@ fileSystems."/run/media/shmuel/Virt" = {
   kdePackages.sddm-kcm
   kdePackages.kdeconnect-kde
   shotwell
+  shotcut
 
 #pkgs
   ];
