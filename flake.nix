@@ -3,7 +3,7 @@
 
 inputs = {
          nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-       #  nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";      
+       #  nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
        # nix-snapd.url = "github:io12/nix-snapd";
        # nix-snapd.inputs.nixpkgs.follows = "nixpkgs";
     };
