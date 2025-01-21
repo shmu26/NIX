@@ -38,6 +38,7 @@
      # virtualisation.vmware.host.enable = true;
       virtualisation.virtualbox.host.enable = true;
       users.extraGroups.vboxusers.members = [ "shmuel" ];
+      boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
      # virtualisation.virtualbox.host.enableExtensionPack = true;
 
     #swap
