@@ -30,7 +30,7 @@
      hardware.sane.enable = true;
 
    #Kernel
-     # boot.kernelPackages = pkgs.linuxPackages_latest;
+      boot.kernelPackages = pkgs.linuxPackages_latest;
 
    # Virtualisation
    #  virtualisation.libvirtd.enable = true;
