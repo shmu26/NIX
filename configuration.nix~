@@ -23,10 +23,10 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
- 
+
    # Sane Scanner
      hardware.sane.enable = true;
-     
+
    #Kernel
      # boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -150,7 +150,7 @@ fileSystems."/run/media/shmuel/Virt" = {
   environment.systemPackages = with pkgs; [
   vim
   wget
-  google-chrome  
+  google-chrome
   xfce.mousepad
   deja-dup
   duplicity
@@ -198,11 +198,12 @@ fileSystems."/run/media/shmuel/Virt" = {
   kdePackages.sddm-kcm
   kdePackages.kdeconnect-kde
   shotwell
+  shotcut
 
 #pkgs
   ];
 
-  
+
    programs.zsh = {
    enable = true;
    autosuggestions.enable = true;
@@ -215,7 +216,7 @@ fileSystems."/run/media/shmuel/Virt" = {
     up = "sudo nix-channel --update";
     clean = "sudo nix-collect-garbage -d && sudo nix-store --gc && sudo nixos-rebuild boot";
     opt = "sudo nix-store --optimise";
-    
+
   };
 };
 programs.zsh.ohMyZsh = {
@@ -249,7 +250,7 @@ system.userActivationScripts.zshrc = "touch .zshrc";
     services.openssh.enable = true;
     # services.flatpak.enable = true;
     services.avahi.enable = true;
-    services.avahi.nssmdns4 = true; 
+    services.avahi.nssmdns4 = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
