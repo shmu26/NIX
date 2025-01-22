@@ -41,6 +41,13 @@
       boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
      # virtualisation.virtualbox.host.enableExtensionPack = true;
 
+   #distrobox    
+     virtualisation.podman = {
+     enable = true;
+     dockerCompat = true;
+};
+
+
     #swap
     zramSwap.enable = true;
 
@@ -202,6 +209,7 @@ fileSystems."/run/media/shmuel/Virt" = {
   kdePackages.kdeconnect-kde
   shotwell
   shotcut
+  distrobox
 
 #pkgs
   ];
@@ -219,6 +227,7 @@ fileSystems."/run/media/shmuel/Virt" = {
     up = "cd /etc/nixos/ && sudo nix flake update";
     clean = "sudo nix-collect-garbage -d && sudo nix-store --gc && sudo nixos-rebuild boot";
     opt = "sudo nix-store --optimise";
+    bios = "systemctl reboot --firmware-setup";
 
   };
 };
