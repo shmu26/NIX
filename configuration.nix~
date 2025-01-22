@@ -228,6 +228,7 @@ fileSystems."/run/media/shmuel/Virt" = {
     clean = "sudo nix-collect-garbage -d && sudo nix-store --gc && sudo nixos-rebuild boot";
     opt = "sudo nix-store --optimise";
     bios = "systemctl reboot --firmware-setup";
+    ub = "distrobox enter ubuntu";
 
   };
 };

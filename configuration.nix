@@ -41,13 +41,6 @@
       boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
      # virtualisation.virtualbox.host.enableExtensionPack = true;
 
-   #distrobox    
-     virtualisation.podman = {
-     enable = true;
-     dockerCompat = true;
-};
-
-
     #swap
     zramSwap.enable = true;
 
@@ -209,7 +202,6 @@ fileSystems."/run/media/shmuel/Virt" = {
   kdePackages.kdeconnect-kde
   shotwell
   shotcut
-  distrobox
 
 #pkgs
   ];
