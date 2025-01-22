@@ -209,9 +209,6 @@ fileSystems."/run/media/shmuel/Virt" = {
   kdePackages.kdeconnect-kde
   shotwell
   shotcut
-  virtualisation.podman = {
-  enable = true;
-  dockerCompat = true;
   distrobox
 
 #pkgs
