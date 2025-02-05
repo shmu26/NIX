@@ -202,8 +202,7 @@ fileSystems."/run/media/shmuel/Virt" = {
   kdePackages.kdeconnect-kde
   shotwell
   shotcut
-  clockify
-
+  
 #pkgs
   ];
 
