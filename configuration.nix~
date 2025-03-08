@@ -202,6 +202,7 @@ fileSystems."/run/media/shmuel/Virt" = {
   kdePackages.kdeconnect-kde
   shotwell
   shotcut
+  python313Packages.toggl-cli
   
 #pkgs
   ];
