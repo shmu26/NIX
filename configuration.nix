@@ -206,7 +206,8 @@ fileSystems."/run/media/shmuel/Virt" = {
   
 #pkgs
   ];
-
+# non-declaratively installed:
+  # nix-env -iA nixos.goldendict-ng
 
    programs.zsh = {
    enable = true;
