@@ -186,7 +186,7 @@ fileSystems."/run/media/shmuel/Virt" = {
   zram-generator
   galculator
   fh
-  filelight
+  kdePackages.filelight
   parted
   git-credential-manager
   exfat

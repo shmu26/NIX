@@ -163,7 +163,7 @@ fileSystems."/run/media/shmuel/Virt" = {
   timeshift
   gparted
   conky
-  goldendict-ng
+ # goldendict-ng
   losslesscut-bin
   vlc
   smplayer
